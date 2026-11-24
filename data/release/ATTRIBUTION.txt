@@ -1,0 +1,18 @@
+Nepal Trail RAG — first local prototype data attribution
+Release: NEPAL-RAG-LOCAL-20261118-01
+Based on: NEPAL-PILOT-REVIEW-FROZEN-20261118-R03; selected six human-accepted non-distance records only.
+This is a local prototype subset, not a public-service or production safety release.
+The licence labels apply to their selected-source material. They do not relicense original project code or model weights.
+
+O01: KeiTreks, GPX downloads, https://keitreks.com/gpx, CC BY 4.0. Changes: selected fields reworded in English.
+Licence: CC-BY-4.0 — https://creativecommons.org/licenses/by/4.0/
+Subset-specific change: only accepted non-distance day/end-point/corridor records are selected; the original fact payloads and reviewed hashes are unchanged.
+
+O03: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, CC BY-SA 4.0. Changes: selected topology and point-elevation facts paraphrased; distances, times and advice excluded. Retain imported-work notice and contributor history. Adapted text offered under CC BY-SA 4.0.
+Licence: CC-BY-SA-4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+Additional source notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+Contributor history: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+Subset-specific change: only accepted non-distance day/end-point/corridor records are selected; the original fact payloads and reviewed hashes are unchanged.
+
+Source registry history describes earlier checks and limits. Its historical acquisition notes are not new retrieval content.
+Questions, answer keys, scores, audit records, pending facts and excluded measurements must remain outside the retrieval index.

@@ -1,0 +1,73 @@
+{
+  "scope_id": "NEPAL-LOCAL-PROTOTYPE-SCOPE-01",
+  "release_id": "NEPAL-RAG-LOCAL-20261118-01",
+  "language": "en",
+  "adopted_on": "2026-11-18",
+  "scope_adoption": "Assistant-selected first implementation scope under the user's explicit request to finish preparation and develop a local minimal prototype.",
+  "not_a_new_human_fact_or_answer_key_acceptance": true,
+  "allowed_reference_ids": [
+    "ABC-KT-06",
+    "ABC-WV-CORRIDOR"
+  ],
+  "allowed_topics": [
+    "publisher-defined walking-day count",
+    "ordered day-stage endpoints",
+    "source-described corridor waypoint order",
+    "named stage connections",
+    "distinguishing reference boundaries"
+  ],
+  "unsupported_topics": [
+    "day or whole-route distance",
+    "altitude/elevation",
+    "walking hours",
+    "cumulative ascent or descent",
+    "recording dates or year",
+    "Poon Hill access or metrics",
+    "Ama Dablam route metrics",
+    "current permits or fees",
+    "live weather or trail opening",
+    "medical or personal safety suitability",
+    "summit itineraries"
+  ],
+  "shared_scope_en": "This first English prototype covers only the named ABC-KT-06 itinerary labels and ABC-WV-CORRIDOR route descriptions: walking-day count, stage endpoints, described waypoint order and connections. Keep the two reference types separate. No usable distance, altitude, walking-hour, ascent/descent or recording-date field is included. It does not cover Poon Hill, Ama Dablam route planning, live conditions, fees, medical suitability or summit itineraries. Clarify ambiguous route boundaries and state evidence limits instead of filling gaps. This scope instruction is supplied equally to RAG and no-RAG comparison conditions.",
+  "accepted_fact_ids": [
+    "K07",
+    "K08",
+    "W01",
+    "W02",
+    "W03",
+    "W04"
+  ],
+  "licence_limit": "A selected-field licence and acceptance do not admit a whole source page, photograph or linked material.",
+  "quality_limit": "The corpus is six qualified documentary facts. It is sufficient for pipeline and evidence-handling validation, not proof of comprehensive planning value, route length over 10 km, accident reduction or validated personalization.",
+  "metadata_limit": "Original qualification text and source registries remain intact for traceability. A recording-year caveat or prior-register note is not a separately admitted date/measurement fact and must not be used to expand this scope.",
+  "retrieval_fact_field_allowlist": [
+    "statement_en",
+    "qualification_en",
+    "scope.reference_id",
+    "scope.walk_start",
+    "scope.walk_finish",
+    "scope.subject"
+  ],
+  "source_context_field_allowlist": [
+    "title",
+    "publisher",
+    "url",
+    "attribution",
+    "licence_id",
+    "licence_url",
+    "additional_notice",
+    "history_url"
+  ],
+  "excluded_input_locations": [
+    "evaluation/**",
+    "history/**",
+    "staging/**",
+    "**/*audit*",
+    "**/*.xlsx",
+    "**/*.gpx",
+    "**/*.csv",
+    "whole web pages",
+    "inactive or pending facts"
+  ]
+}

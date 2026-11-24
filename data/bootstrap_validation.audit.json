@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-11-18",
+  "release_id": "NEPAL-RAG-LOCAL-20261118-01",
+  "facts": 6,
+  "sources": 2,
+  "development_items": 8,
+  "maximum_points": 24,
+  "frozen_source_files_verified_unchanged": 94,
+  "payload_hashes_and_manifest_files_match": true,
+  "development_keys_excluded_from_retrieval": true,
+  "no_excluded_numeric_answers_in_development": true,
+  "model_or_index_created_by_export": false,
+  "negative_cases": [
+    {
+      "case": "changed accepted fact",
+      "result": "EXPECTED_REJECTION"
+    },
+    {
+      "case": "pending fact review",
+      "result": "EXPECTED_REJECTION"
+    },
+    {
+      "case": "inactive current use",
+      "result": "EXPECTED_REJECTION"
+    },
+    {
+      "case": "source rights not accepted",
+      "result": "EXPECTED_REJECTION"
+    },
+    {
+      "case": "write inside frozen source",
+      "result": "EXPECTED_REJECTION"
+    },
+    {
+      "case": "unreviewed field added to bootstrap scope",
+      "result": "EXPECTED_REJECTION"
+    }
+  ]
+}

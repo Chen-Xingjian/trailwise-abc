@@ -1,0 +1,239 @@
+[
+  {
+    "id": "keitreks-index",
+    "kind": "article",
+    "url": "https://keitreks.com/gpx",
+    "marker": "Siwai",
+    "sources": [
+      "O01"
+    ],
+    "audit_fingerprint": "c3b20239393244875fcbd8d024b87e2e686a41f17c62cf32119e610d70c35a01"
+  },
+  {
+    "id": "keitreks-time",
+    "kind": "time_labels",
+    "url": "https://keitreks.com/trek-data/#t-time",
+    "sources": [
+      "K-TIME"
+    ],
+    "audit_fingerprint": "d69dc599715ee4d8ad8d6ad6749bc16c0575f952ae70108a5ed34fb77a7b078d"
+  },
+  {
+    "id": "track-day-1",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-1.gpx",
+    "facts": [
+      "KT-D1-M",
+      "KT-D1-E",
+      "KT-D1-TRACK-START",
+      "KT-D1-ASC-APPROX",
+      "KT-D1-DES-QUAL",
+      "S05-CHHOMRONG-01",
+      "S05-CHHOMRONG-02",
+      "S05-CHHOMRONG-03",
+      "S05-CHHOMRONG-04",
+      "S05-CHHOMRONG-05",
+      "S05-CHHOMRONG-06",
+      "S05-CHHOMRONG-07",
+      "S05-CHHOMRONG-08",
+      "S05-CHHOMRONG-09",
+      "S05-CHHOMRONG-10",
+      "S05-CHHOMRONG-11",
+      "S05-CHHOMRONG-12"
+    ],
+    "audit_fingerprint": "20f74be739bc42eff2cedc2cf35667b3ed2ea96e059c891228b4666b5c292bdc"
+  },
+  {
+    "id": "track-day-2",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-2.gpx",
+    "facts": [
+      "KT-D2-M",
+      "KT-D2-E",
+      "KT-D2-ASC-APPROX",
+      "KT-D2-DES-APPROX"
+    ],
+    "audit_fingerprint": "a281a5a1ad3ac50b9aa9d65d8b1c80fbba083c46494941bbb5418ec1d24f20df"
+  },
+  {
+    "id": "track-day-3",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-3.gpx",
+    "facts": [
+      "KT-D3-M",
+      "KT-D3-E",
+      "KT-D3-ASC-APPROX",
+      "KT-D3-DES-QUAL",
+      "S05-DEURALI-01",
+      "S05-DEURALI-02",
+      "S05-DEURALI-03",
+      "S05-DEURALI-04",
+      "S05-DEURALI-05",
+      "S05-DEURALI-06",
+      "S05-DEURALI-07",
+      "S05-DEURALI-08",
+      "S05-DEURALI-09",
+      "S05-DEURALI-10",
+      "S05-DEURALI-11",
+      "S05-DEURALI-12"
+    ],
+    "audit_fingerprint": "84f2f8a158fdedee787e6ef1a67ff327571c09f5642118be7652db3ecff1fd8d"
+  },
+  {
+    "id": "track-day-4",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-4.gpx",
+    "facts": [
+      "KT-D4-M",
+      "KT-D4-E",
+      "KT-D4-ASC-APPROX",
+      "S05-ABC-01",
+      "S05-ABC-02",
+      "S05-ABC-03",
+      "S05-ABC-04",
+      "S05-ABC-05",
+      "S05-ABC-06",
+      "S05-ABC-07",
+      "S05-ABC-08",
+      "S05-ABC-09",
+      "S05-ABC-10",
+      "S05-ABC-11",
+      "S05-ABC-12"
+    ],
+    "audit_fingerprint": "fdbd5a1132906ae4cf6d3173a3d10c1eb4bd564f44225ae455531160d2f228b0"
+  },
+  {
+    "id": "track-day-5",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-5.gpx",
+    "facts": [
+      "KT-D5-M",
+      "KT-D5-E",
+      "KT-D5-ASC-QUAL",
+      "KT-D5-DES-APPROX"
+    ],
+    "audit_fingerprint": "b46ea25a77f909293bd814402e009b662db7c302e1ff55f4c4d268c5bfbbcd11"
+  },
+  {
+    "id": "track-day-6",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-day-6.gpx",
+    "facts": [
+      "KT-D6-M",
+      "KT-D6-E",
+      "KT-D6-TRACK-FINISH",
+      "KT-D6-ASC-APPROX",
+      "KT-D6-DES-APPROX"
+    ],
+    "audit_fingerprint": "9bd596a1ae47f4eacfac563cfc49baae8c2cfd5a9a09d5bf66cb56db919f11f9"
+  },
+  {
+    "id": "whole-track",
+    "kind": "file",
+    "url": "https://keitreks.com/gpx/abc-ohana.gpx",
+    "sources": [
+      "KT-D4-DATA",
+      "KT-D235-LOAD",
+      "KT-D16-LOAD",
+      "KT-D16-ENDS",
+      "K-TIME"
+    ],
+    "audit_fingerprint": "86338bc5fa9785af294eb7a31a7561dfb9a214497d048dbcb8fa91ca43dba568"
+  },
+  {
+    "id": "daily-metrics",
+    "kind": "file",
+    "url": "https://keitreks.com/data/keitreks-annapurna-base-camp.csv",
+    "sources": [
+      "KT-D235-LOAD",
+      "KT-D16-LOAD"
+    ],
+    "audit_fingerprint": "aeb62fc981db8a94a50f7017d9ec32a203f070b3542baf9644d661af0951371f"
+  },
+  {
+    "id": "wikivoyage-current-revision",
+    "kind": "wiki",
+    "url": "https://en.wikivoyage.org/w/api.php?action=query&format=json&prop=revisions&rvprop=ids&titles=Annapurna_Sanctuary_trek",
+    "sources": [
+      "O03",
+      "WV-ABC-GEAR",
+      "WV-ABC-WATER",
+      "WV-ABC-SNACKS",
+      "WV-ABC-SEASONS"
+    ],
+    "audit_fingerprint": "5366510"
+  },
+  {
+    "id": "OSM-JHINU-BRIDGE",
+    "kind": "osm",
+    "url": "https://api.openstreetmap.org/api/0.6/way/651003807/full.json",
+    "sources": [
+      "OSM-JHINU-BRIDGE"
+    ]
+  },
+  {
+    "id": "OSM-JHINU-STOP",
+    "kind": "osm",
+    "url": "https://api.openstreetmap.org/api/0.6/node/11399485769.json",
+    "sources": [
+      "OSM-JHINU-STOP"
+    ]
+  },
+  {
+    "id": "era5_daily",
+    "kind": "era5",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=28.4175924,28.5003710,28.5309351&longitude=83.8187085,83.9004043,83.8808964&elevation=2209,3184,4090&start_date=1993-01-01&end_date=2022-12-31&daily=temperature_2m_mean,precipitation_sum&models=era5&timezone=Asia%2FKathmandu",
+    "interval_days": 30,
+    "sources": [
+      "ERA5-ABC-S05"
+    ],
+    "audit_fingerprint": "958dd0f69fb19c5964b355b84c2479a2b78960dd666e96e6959781b7c6bf87c5"
+  },
+  {
+    "id": "era5_grid_elevation",
+    "kind": "era5",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=28.25,28.5,28.5&longitude=83.75,83.75,84.0&elevation=nan,nan,nan&cell_selection=nearest&start_date=2000-01-01&end_date=2000-01-01&daily=temperature_2m_mean&models=era5&timezone=Asia%2FKathmandu",
+    "interval_days": 30,
+    "sources": [
+      "ERA5-ABC-S05"
+    ],
+    "audit_fingerprint": "973e85a18ae873b1160192f87b6b744f875ad658b98eaaca7e54b057d2893a2e"
+  },
+  {
+    "id": "NPS-KIT",
+    "kind": "article",
+    "url": "https://www.nps.gov/articles/10essentials.htm",
+    "marker": "Essentials",
+    "sources": [
+      "NPS-KIT",
+      "NPS-KIT-G10-G12"
+    ]
+  },
+  {
+    "id": "NPS-HIKE",
+    "kind": "article",
+    "url": "https://www.nps.gov/articles/hiking-safety.htm",
+    "marker": "Hiking",
+    "sources": [
+      "NPS-HIKE"
+    ]
+  },
+  {
+    "id": "CDC-ALT",
+    "kind": "article",
+    "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+    "marker": "Altitude",
+    "sources": [
+      "CDC-ALT"
+    ]
+  },
+  {
+    "id": "NPS-PLAN",
+    "kind": "article",
+    "url": "https://www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm",
+    "marker": "Trip Planning",
+    "sources": [
+      "NPS-PLAN"
+    ]
+  }
+]

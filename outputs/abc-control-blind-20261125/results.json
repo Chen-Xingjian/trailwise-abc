@@ -1,0 +1,162 @@
+[
+  {
+    "id": "H01",
+    "domain": "Route",
+    "turn": 1,
+    "primary": true,
+    "rag": 0,
+    "baseline": 1
+  },
+  {
+    "id": "H02",
+    "domain": "Route",
+    "turn": 1,
+    "primary": true,
+    "baseline": 1,
+    "rag": 0
+  },
+  {
+    "id": "H03",
+    "domain": "Route",
+    "turn": 1,
+    "primary": true,
+    "baseline": 0,
+    "rag": 2
+  },
+  {
+    "id": "H04",
+    "domain": "Gear",
+    "turn": 1,
+    "primary": true,
+    "baseline": 0,
+    "rag": 2
+  },
+  {
+    "id": "H05",
+    "domain": "Gear",
+    "turn": 1,
+    "primary": true,
+    "baseline": 1,
+    "rag": 1
+  },
+  {
+    "id": "H06",
+    "domain": "Gear",
+    "turn": 1,
+    "primary": true,
+    "baseline": 2,
+    "rag": 2
+  },
+  {
+    "id": "H07",
+    "domain": "Weather",
+    "turn": 1,
+    "primary": true,
+    "rag": 2,
+    "baseline": 0
+  },
+  {
+    "id": "H08",
+    "domain": "Weather",
+    "turn": 1,
+    "primary": true,
+    "rag": 0,
+    "baseline": 1
+  },
+  {
+    "id": "H09",
+    "domain": "Weather",
+    "turn": 1,
+    "primary": true,
+    "rag": 1,
+    "baseline": 1
+  },
+  {
+    "id": "H10",
+    "domain": "Preparation",
+    "turn": 1,
+    "primary": true,
+    "baseline": 1,
+    "rag": 1
+  },
+  {
+    "id": "H11",
+    "domain": "Preparation",
+    "turn": 1,
+    "primary": true,
+    "rag": 2,
+    "baseline": 1
+  },
+  {
+    "id": "H12",
+    "domain": "Preparation",
+    "turn": 1,
+    "primary": true,
+    "baseline": 1,
+    "rag": 0
+  },
+  {
+    "id": "H13",
+    "domain": "Combined",
+    "turn": 1,
+    "primary": false,
+    "baseline": 1,
+    "rag": 2
+  },
+  {
+    "id": "H13",
+    "domain": "Combined",
+    "turn": 2,
+    "primary": true,
+    "baseline": 2,
+    "rag": 0
+  },
+  {
+    "id": "H14",
+    "domain": "Combined",
+    "turn": 1,
+    "primary": false,
+    "baseline": 0,
+    "rag": 2
+  },
+  {
+    "id": "H14",
+    "domain": "Combined",
+    "turn": 2,
+    "primary": true,
+    "baseline": 1,
+    "rag": 1
+  },
+  {
+    "id": "H15",
+    "domain": "Combined",
+    "turn": 1,
+    "primary": false,
+    "rag": 2,
+    "baseline": 0
+  },
+  {
+    "id": "H15",
+    "domain": "Combined",
+    "turn": 2,
+    "primary": true,
+    "rag": 0,
+    "baseline": 0
+  },
+  {
+    "id": "H16",
+    "domain": "Combined",
+    "turn": 1,
+    "primary": false,
+    "baseline": 1,
+    "rag": 0
+  },
+  {
+    "id": "H16",
+    "domain": "Combined",
+    "turn": 2,
+    "primary": true,
+    "baseline": 0,
+    "rag": 1
+  }
+]

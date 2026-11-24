@@ -1,0 +1,59 @@
+[
+  {
+    "question": "What’s the weather forecast for Annapurna Base Camp tomorrow?",
+    "displayed": "What’s the weather forecast for Annapurna Base Camp tomorrow?\n\nWith RAG\n\nUses the reviewed trail guide\n\nExternal source check\n\nAt Annapurna Base Camp (4,090 m) on 2026-11-25 Nepal time, the forecast is 0.6 to 4.6 °C. Total precipitation: 0 mm. Forecast snowfall: 0 cm. Gusts may reach 69.5 km/h.\n\nView sources\n\nChecked 24 Nov 2026, 23:57 NPT · DWD ICON Global via Open-Meteo ↗ · CC BY 4.0 ↗ · Route points adapted from KeiTreks GPX ↗ · Daily forecast in Nepal time · Grid centre 3.5 km from the route point\n\nWithout RAG\n\nSame model · public live checks available · no guide documents\n\nExternal source check\n\nAt Annapurna Base Camp (4,090 m) on 2026-11-25 Nepal time, the forecast is 0.6 to 4.6 °C. Total precipitation: 0 mm. Forecast snowfall: 0 cm. Gusts may reach 69.5 km/h.\n\nView sources\n\nChecked 24 Nov 2026, 23:57 NPT · DWD ICON Global via Open-Meteo ↗ · CC BY 4.0 ↗ · Route points adapted from KeiTreks GPX ↗ · Daily forecast in Nepal time · Grid centre 3.5 km from the route point\n\nRetrieval: none\nReply to this answer",
+    "sources": [
+      {
+        "label": "DWD ICON Global via Open-Meteo ↗",
+        "url": "https://api.open-meteo.com/v1/forecast?latitude=28.5309351&longitude=83.8808964&elevation=4090&models=icon_global&timezone=Asia%2FKathmandu&start_date=2026-11-25&end_date=2026-11-25&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_sum%2Csnowfall_sum%2Cwind_gusts_10m_max"
+      },
+      {
+        "label": "CC BY 4.0 ↗",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "label": "KeiTreks GPX ↗",
+        "url": "https://keitreks.com/gpx"
+      },
+      {
+        "label": "DWD ICON Global via Open-Meteo ↗",
+        "url": "https://api.open-meteo.com/v1/forecast?latitude=28.5309351&longitude=83.8808964&elevation=4090&models=icon_global&timezone=Asia%2FKathmandu&start_date=2026-11-25&end_date=2026-11-25&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_sum%2Csnowfall_sum%2Cwind_gusts_10m_max"
+      },
+      {
+        "label": "CC BY 4.0 ↗",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "label": "KeiTreks GPX ↗",
+        "url": "https://keitreks.com/gpx"
+      }
+    ]
+  },
+  {
+    "question": "On the six-day trek from Siwai, how long did KeiTreks actually spend walking from Deurali to ABC?",
+    "displayed": "On the six-day trek from Siwai, how long did KeiTreks actually spend walking from Deurali to ABC?\n\nWith RAG\n\nUses the reviewed trail guide\n\nReviewed stage measurement\n\nOn the recorded Deurali to Annapurna Base Camp stage, moving time was 4 hours and 30 minutes. On the recorded Deurali to Annapurna Base Camp stage, door-to-door elapsed time, including stops was 7 hours and 43 minutes.\n\nView sources\n2 retrieved\n[1] Day 4 · walking time\nAnnapurna Base Camp · six-day round trip from Siwai\n\nOn day 4 of its six-day ABC trek, KeiTreks reports 4 hours and 30 minutes of moving time from Deurali to Annapurna Base Camp.\nQualification: Time classified as moving by the publisher. One publisher observation; individual travel times may differ. Stage endpoints are publisher labels.\n\nMeasured Trek Data — How long the days really run ↗\nCreative Commons Attribution 4.0 ↗\n\nHow long the days really run / Annapurna Base Camp / Day 4 / moving time\n\nAttribution & reuse\n[2] Day 4 · elapsed time including stops\nAnnapurna Base Camp · six-day round trip from Siwai\n\nOn day 4 of its six-day ABC trek, KeiTreks reports 7 hours and 43 minutes of door-to-door elapsed time from Deurali to Annapurna Base Camp.\nQualification: Elapsed time from the first GPS fix to the last fix for the walking day, including stops. One publisher observation; individual travel times may differ. Stage endpoints are publisher labels.\n\nMeasured Trek Data — How long the days really run ↗\nCreative Commons Attribution 4.0 ↗\n\nHow long the days really run / Annapurna Base Camp / Day 4 / door-to-door elapsed time\n\nAttribution & reuse\nAnswer with source numbers\nRetrieval: reviewed stage, direction and measurement\nWithout RAG\n\nSame model · public live checks available · no guide documents\n\nModel-only answer\n4.0 s\n\nI do not have access to specific trip logs or personal records for a trekker named KeiTreks on a six-day route from Siwai. To find the exact time KeiTreks spent walking that section, you would need to consult their specific itinerary, a trekking journal, or a direct message from them.\n\nModel: Qwen3.5-4B-4bit · Retrieval: none\nReply to this answer",
+    "sources": [
+      {
+        "label": "Measured Trek Data — How long the days really run ↗",
+        "url": "https://keitreks.com/trek-data/#t-time"
+      },
+      {
+        "label": "Creative Commons Attribution 4.0 ↗",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "label": "Measured Trek Data — How long the days really run ↗",
+        "url": "https://keitreks.com/trek-data/#t-time"
+      },
+      {
+        "label": "Creative Commons Attribution 4.0 ↗",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ]
+  },
+  {
+    "question": "Given that forecast, what gear should I bring for that stretch?",
+    "displayed": "Given that forecast, what gear should I bring for that stretch?\n\nWith RAG\n\nUses the reviewed trail guide\n\nFollow-up question\n\nCould you tell me which forecast point to use (Chhomrong, Deurali or Annapurna Base Camp), and which date you plan to walk?\n\nWithout RAG\n\nSame model · public live checks available · no guide documents\n\nFollow-up question\n\nCould you tell me which date you plan to walk?\n\nRetrieval: none\nFollow up on both answers\nDeurali → Annapurna Base Camp\nSend follow-up",
+    "sources": []
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "observed_on": "2026-11-18",
+  "models": [
+    {
+      "role": "generator",
+      "model_id": "mlx-community/Qwen3.5-4B-4bit",
+      "revision": "0e7ffd5c629ef7719d4cbc04069232580bfa9d9c",
+      "upstream_model": "Qwen/Qwen3.5-4B",
+      "upstream_licence": "Apache-2.0",
+      "note": "Community MLX conversion; weights stay local. Keep conversion and upstream provenance separate."
+    },
+    {
+      "role": "embedding",
+      "model_id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "upstream_licence": "Apache-2.0"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+Trailwise public coursework subset. Credits and source-specific terms for the selected records follow.
+
+O01
+title: GPX downloads
+publisher: KeiTreks
+url: https://keitreks.com/gpx
+attribution: KeiTreks, GPX downloads, https://keitreks.com/gpx, CC BY 4.0. Changes: selected fields reworded in English.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: Selected attributed data fields or text only; no grant inferred for unrelated narrative, images or linked material.
+changes_notice: Selected facts extracted, typed and paraphrased; original qualifications retained. Review metadata is separate.
+
+O03
+title: Annapurna Sanctuary trek
+publisher: Wikivoyage contributors
+url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510
+attribution: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, CC BY-SA 4.0. Changes: selected topology and point-elevation facts paraphrased; distances, times and advice excluded. Retain imported-work notice and contributor history. Adapted text offered under CC BY-SA 4.0.
+licence_id: CC-BY-SA-4.0
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+reuse_scope: Selected attributed data fields or text only; no grant inferred for unrelated narrative, images or linked material.
+changes_notice: Selected facts extracted, typed and paraphrased; original qualifications retained. Review metadata is separate.
+additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+K-TIME
+title: Measured Trek Data — How long the days really run
+publisher: KeiTreks
+url: https://keitreks.com/trek-data/#t-time
+source_locator: ABC panel / Day 1–6 chart labels and legend
+attribution: KeiTreks, Measured Trek Data, ABC door-to-door vs moving time, CC BY 4.0. Values transcribed in minutes and restated in English.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: The twelve attributed time observations on the ABC chart.
+additional_notice: Source year is unresolved; no recording-year claim is approved.
+
+KT-D4-DATA
+title: KeiTreks ABC Day 4 measured data
+publisher: KeiTreks
+url: https://keitreks.com/gpx
+source_locator: ABC daily tracks / Day 4 and whole-track files. Day 4 itinerary identifies MBC on the approach.
+attribution: KeiTreks, ABC GPX downloads, CC BY 4.0. Cumulative gain recomputed from track elevations and expressed as a rounded planning estimate.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: Selected measured data supporting approximate cumulative ascent on ABC-KT-06 Day 4.
+
+KT-D235-LOAD
+title: KeiTreks ABC stages 2, 3 and 5: selected load fields
+publisher: KeiTreks
+url: https://keitreks.com/gpx
+source_locator: ABC daily CSV and tracks, stage rows 2, 3 and 5.
+attribution: KeiTreks, ABC GPX downloads, CC BY 4.0. Selected ascent and descent values expressed as rounded estimates or qualitative terrain descriptions.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: Six user-accepted approximate or qualitative ascent/descent statements for the indicated stages.
+
+KT-D16-ENDS
+title: ABC day files, first and last recorded points
+publisher: KeiTreks
+url: https://keitreks.com/gpx
+source_locator: First track point of Day 1 and last track point of Day 6
+attribution: KeiTreks, ABC GPX downloads, CC BY 4.0. Endpoints compared with mapped landmarks.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: Only the accepted near-landmark description of the recorded endpoint(s).
+
+OSM-JHINU-BRIDGE
+title: Jhinu Danda suspension bridge
+publisher: OpenStreetMap contributors
+url: https://www.openstreetmap.org/way/651003807
+source_locator: Southern endpoint node 6045306749
+attribution: © OpenStreetMap contributors, ODbL 1.0. Landmark compared with the KeiTreks endpoint.
+licence_id: ODbL-1.0
+licence_url: https://opendatacommons.org/licenses/odbl/1-0/
+reuse_scope: Only the accepted near-landmark description of the recorded endpoint(s).
+
+OSM-JHINU-STOP
+title: Jhinu Danda Bus Stop
+publisher: OpenStreetMap contributors
+url: https://www.openstreetmap.org/node/11399485769
+source_locator: Mapped station node, also displayed by Mapcarta at https://mapcarta.com/N11399485769
+attribution: © OpenStreetMap contributors, ODbL 1.0. Landmark compared with the KeiTreks endpoint.
+licence_id: ODbL-1.0
+licence_url: https://opendatacommons.org/licenses/odbl/1-0/
+reuse_scope: Only the accepted near-landmark description of the recorded endpoint(s).
+
+KT-D16-LOAD
+title: KeiTreks ABC six-day itinerary, selected load fields for stages 1 and 6
+publisher: KeiTreks
+url: https://keitreks.com/gpx
+source_locator: ABC daily CSV, rows for days 1 and 6, ascent_m and descent_m. See corresponding daily tracks.
+attribution: KeiTreks, ABC GPX downloads, CC BY 4.0. Selected ascent and descent values expressed as rounded estimates or qualitative terrain descriptions.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: Three rounded estimates and one qualitative downhill description for this recorded itinerary.
+
+WV-ABC-GEAR
+title: Annapurna Sanctuary trek
+publisher: Wikivoyage contributors
+url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510
+source_locator: Prepare, Sleep, Climate and Stay safe, revision 5366510.
+attribution: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, CC BY-SA 4.0. Selected guidance paraphrased and narrowed to the reviewed equipment decisions. Adapted statements offered under CC BY-SA 4.0.
+licence_id: CC-BY-SA-4.0
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+reuse_scope: Four selected equipment planning statements for the ABC pilot (G05–G08).
+changes_notice: Local-condition and booking checks are project planning advice. Community text describes typical conditions and lodging.
+additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+NPS-KIT
+title: Ten Essentials
+publisher: U.S. National Park Service
+url: https://www.nps.gov/articles/10essentials.htm
+source_locator: Illumination, Extra Clothing, Navigation, Hydration
+attribution: U.S. National Park Service, Ten Essentials, updated May 28, 2026.
+licence_id: US-Gov-PD
+licence_url: https://www.nps.gov/aboutus/disclaimer.htm
+reuse_scope: G01–G04, independently phrased recommendations supported by NPS text. Excludes pictures, third-party material and reproduction of the Mountaineers framework.
+additional_notice: U.S. government public-domain status generally applies to NPS-authored material in the United States.
+
+WV-ABC-WATER
+title: Annapurna Sanctuary trek
+publisher: Wikivoyage contributors
+url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510
+source_locator: Drink, paragraph on reusable containers and treatment of collected water.
+attribution: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, Drink. G04 paraphrases selected water preparation guidance and is offered under CC BY-SA 4.0.
+licence_id: CC-BY-SA-4.0
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+reuse_scope: G04 only, refillable container and treatment planning for untreated water collected along the trail.
+changes_notice: Selected advice paraphrased. Quantity, rules, prices and water-point availability omitted.
+additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+NPS-KIT-G10-G12
+title: Ten Essentials
+publisher: U.S. National Park Service
+url: https://www.nps.gov/articles/10essentials.htm
+source_locator: Sun Protection, Nutrition, First-Aid Supplies, Emergency Shelter
+attribution: U.S. National Park Service, Ten Essentials, updated May 28, 2026.
+licence_id: US-Gov-PD
+licence_url: https://www.nps.gov/aboutus/disclaimer.htm
+reuse_scope: Independently worded G10–G12 equipment guidance only. NPS-authored text used as evidence; graphics and third-party material excluded.
+additional_notice: U.S. government public-domain status generally applies to NPS-authored material in the United States.
+
+WV-ABC-SNACKS
+title: Annapurna Sanctuary trek
+publisher: Wikivoyage contributors
+url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510
+source_locator: Eat, paragraph on food between teahouse stops.
+attribution: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, Eat. G11 is a paraphrase offered under CC BY-SA 4.0.
+licence_id: CC-BY-SA-4.0
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+reuse_scope: G11 only, ready-to-eat reserve food carried between stops.
+changes_notice: Paraphrased the between-stop snack advice for the six-day pilot.
+additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+WV-ABC-SEASONS
+title: Annapurna Sanctuary trek
+publisher: Wikivoyage contributors
+url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510
+source_locator: Climate and Stay safe, revision 5366510.
+attribution: Adapted from Wikivoyage contributors, Annapurna Sanctuary trek, revision 5366510, Climate and Stay safe. Changes: selected and qualified seasonal statements. Adaptations offered under CC BY-SA 4.0.
+licence_id: CC-BY-SA-4.0
+licence_url: https://creativecommons.org/licenses/by-sa/4.0/
+reuse_scope: S01–S03 only, seasonal planning context for the Sanctuary route and the upper corridor above Deurali.
+changes_notice: Selected guidance paraphrased and qualified by location, season and uncertainty.
+additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
+history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+ERA5-ABC-S05
+title: Monthly climate background for three ABC reference points, 1993–2022
+publisher: Open-Meteo / Copernicus Climate Change Service, ECMWF; reference points from KeiTreks
+url: https://open-meteo.com/en/docs/historical-weather-api
+source_locator: S05_evidence/method_and_results.json and two archived API responses. Daily-file endpoints used for location anchors.
+attribution: Weather data via Open-Meteo (CC BY 4.0). ERA5: Hersbach et al., Copernicus Climate Change Service (C3S), ECMWF. Calculated monthly climatologies. GPX query anchors adapted from KeiTreks, CC BY 4.0.
+licence_id: CC-BY-4.0
+licence_url: https://creativecommons.org/licenses/by/4.0/
+reuse_scope: 36 site-month pairs of reviewed climatic averages only; historical regional background.
+
+NPS-HIKE
+title: Hike Smart
+publisher: U.S. National Park Service
+url: https://www.nps.gov/articles/hiking-safety.htm
+source_locator: Know Your Limits
+attribution: U.S. National Park Service, Hike Smart, Know Your Limits. Selected guidance independently phrased for the ABC pilot.
+licence_id: US-Gov-PD
+licence_url: https://www.nps.gov/aboutus/disclaimer.htm
+reuse_scope: F03 only; original textual guidance. Excludes third-party materials, figures and tables.
+
+CDC-ALT
+title: High-Altitude Travel and Altitude Illness
+publisher: CDC Yellow Book, Peter H. Hackett and David R. Shlim
+url: https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html
+source_locator: Altitude illness / Risk to travelers
+attribution: CDC Yellow Book, Peter H. Hackett and David R. Shlim, High-Altitude Travel and Altitude Illness, Altitude illness / Risk to travelers. Selected guidance independently phrased for the ABC pilot.
+licence_id: US-Gov-PD
+licence_url: https://www.cdc.gov/yellow-book/hcp/about/index.html
+reuse_scope: F04 only; original textual guidance. Excludes third-party materials, figures and tables.
+
+NPS-PLAN
+title: Trip Planning Guide
+publisher: U.S. National Park Service
+url: https://www.nps.gov/subjects/healthandsafety/trip-planning-guide.htm
+source_locator: Tell a Trusted Contact
+attribution: U.S. National Park Service, Trip Planning Guide, Tell a Trusted Contact. Selected guidance independently phrased for the ABC pilot.
+licence_id: US-Gov-PD
+licence_url: https://www.nps.gov/aboutus/disclaimer.htm
+reuse_scope: F05 only; original textual guidance. Excludes third-party materials, figures and tables.

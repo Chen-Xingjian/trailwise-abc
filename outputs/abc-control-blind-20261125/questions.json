@@ -1,0 +1,186 @@
+[
+  {
+    "id": "H01",
+    "domain": "Route",
+    "turns": [
+      "I’m transcribing the downhill day from Annapurna Base Camp to Bamboo on the KeiTreks trip. My sheet accepts whole minutes only. What goes in the elapsed column?"
+    ],
+    "key": [
+      "484 minutes incl. stops; recorded in this direction."
+    ],
+    "basis": "KT-D5-E"
+  },
+  {
+    "id": "H02",
+    "domain": "Route",
+    "turns": [
+      "My activity app shows 3 h 18 moving and 4 h 02 elapsed. Which should I put in the family diary for time away, and how long was I stationary?"
+    ],
+    "key": [
+      "4 h 02 elapsed; 44 minutes stationary. User-provided arithmetic, no route observation required."
+    ],
+    "basis": "user input; clock definitions"
+  },
+  {
+    "id": "H03",
+    "domain": "Route",
+    "turns": [
+      "For the KeiTreks walk from Bamboo to Deurali, I only need the moving figure for a stopwatch in minutes. What number do I enter?"
+    ],
+    "key": [
+      "306 minutes of moving time; scope to the published walk."
+    ],
+    "basis": "KT-D3-M"
+  },
+  {
+    "id": "H04",
+    "domain": "Gear",
+    "turns": [
+      "A leaky seam soaked my spare trousers last year. With an outer pack cover already fitted, how should I stow the next change of clothes?"
+    ],
+    "key": [
+      "Waterproof or plastic bag inside the pack; a cover alone is insufficient protection."
+    ],
+    "basis": "NPS-DRY-01"
+  },
+  {
+    "id": "H05",
+    "domain": "Gear",
+    "turns": [
+      "We will split our supplies between a day bag and luggage we won't touch until dinner. Where should the spare headlamp batteries and the between-lodge snacks go, and why?"
+    ],
+    "key": [
+      "Keep compatible spare batteries and ready-to-eat reserve snacks accessible in the day bag for light and food when away from luggage."
+    ],
+    "basis": "G01; G11"
+  },
+  {
+    "id": "H06",
+    "domain": "Gear",
+    "turns": [
+      "We are taking a refillable flask and sealed drinking water. Is the advice about treating water aimed at the sealed supply or untreated water we collect en route?"
+    ],
+    "key": [
+      "Advice applies to untreated trail water; avoid blanket treatment of sealed drinking water."
+    ],
+    "basis": "G04"
+  },
+  {
+    "id": "H07",
+    "domain": "Weather",
+    "turns": [
+      "I'm annotating an October climate graph for Deurali. What's the ERA5 mean air temperature for the 1993–2022 reference period, and does it give the precise temperature at the lodge?"
+    ],
+    "key": [
+      "8.1 °C historical grid mean; not a lodge measurement."
+    ],
+    "basis": "S05-DEURALI-10"
+  },
+  {
+    "id": "H08",
+    "domain": "Weather",
+    "turns": [
+      "My sister sees sun in Pokhara on her weather app. Can she infer sunshine at my higher walking point for the entire afternoon? What should she compare?"
+    ],
+    "key": [
+      "Cannot extrapolate; match walking location, elevation and time window. No live observation required."
+    ],
+    "basis": "S06"
+  },
+  {
+    "id": "H09",
+    "domain": "Weather",
+    "turns": [
+      "What is the difference between the chance of rain on my hiking day and the average precipitation total for a calendar month?"
+    ],
+    "key": [
+      "Probability for the day versus historical typical amount across whole month. Not interchangeable."
+    ],
+    "basis": "general knowledge; historical grid qualifications"
+  },
+  {
+    "id": "H10",
+    "domain": "Preparation",
+    "turns": [
+      "I can train with the pack I'll actually take. Besides kilometres, what parts of a practice outing would make it more like my route?"
+    ],
+    "key": [
+      "Comparable climbs and descents with expected pack, no guarantee of readiness."
+    ],
+    "basis": "F03"
+  },
+  {
+    "id": "H11",
+    "domain": "Preparation",
+    "turns": [
+      "A flatmate wants to help from home while I trek. What should we write down together so she knows when and how to act if I miss check-in?"
+    ],
+    "key": [
+      "Share route and expected return/check-in time; agree overdue actions in advance."
+    ],
+    "basis": "F05"
+  },
+  {
+    "id": "H12",
+    "domain": "Preparation",
+    "turns": [
+      "I'm quicker than the rest of my group on stairs. Can I infer from that alone that I won't develop altitude illness at ABC?"
+    ],
+    "key": [
+      "No; fitness/speed alone does not rule out altitude illness. No personal clearance."
+    ],
+    "basis": "F04"
+  },
+  {
+    "id": "H13",
+    "domain": "Combined",
+    "turns": [
+      "On the KeiTreks record from Bamboo to Siwai, what is the end-to-end elapsed time in minutes?",
+      "If I use that number for my lift booking, does it establish the pickup minute on my own day?"
+    ],
+    "key": [
+      "398 minutes incl. stops, one trip.",
+      "Retain final stage, distinguish elapsed duration from appointment, no guaranteed pickup; verify actual arrangement."
+    ],
+    "basis": "KT-D6-E; KT-D6-TRACK-FINISH"
+  },
+  {
+    "id": "H14",
+    "domain": "Combined",
+    "turns": [
+      "I’m looking at the November historical grid for Annapurna Base Camp. What is the mean air temperature there?",
+      "With only that figure and no bedding details, can you choose an exact sleeping bag temperature rating for me?"
+    ],
+    "key": [
+      "−2.0 °C grid mean, not live.",
+      "Monthly mean is not overnight minimum; check bedding and conditions; no exact rating."
+    ],
+    "basis": "S05-ABC-11; G08"
+  },
+  {
+    "id": "H15",
+    "domain": "Combined",
+    "turns": [
+      "I'm following the published Nayapul-to-Nayapul itinerary. Where do I walk on day one after the drive?",
+      "For that same version, can I paste the KeiTreks Siwai final-day GPS time into the last walking leg of my schedule?"
+    ],
+    "key": [
+      "Nayapul to Ghandruk, no Pokhara walking leg.",
+      "No cross-version transfer; retain Nayapul finish and explain different observed stage/route."
+    ],
+    "basis": "Desire Adventures schedule; KT-D6-E scope"
+  },
+  {
+    "id": "H16",
+    "domain": "Combined",
+    "turns": [
+      "If I have to stop for lunch, which clock on my hike includes that pause?",
+      "Suppose I started at 09:10 and stopped recording at 12:20 with just one 25-minute lunch. Give both clock readings in minutes."
+    ],
+    "key": [
+      "Elapsed includes the lunch stop; moving time excludes stationary breaks.",
+      "190 elapsed and 165 moving minutes, user-supplied example; do not substitute a published stage."
+    ],
+    "basis": "user input; clock definitions"
+  }
+]

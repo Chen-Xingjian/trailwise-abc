@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Admission and incremental-release contract. The first local release has six selected facts; this contract imposes no permanent six-, 23- or 1000-record limit.",
+  "authority": "Existing human fact and source acceptance controls admission. The user's prototype request authorizes implementing this first subset, not accepting pending records.",
+  "first_release": "NEPAL-RAG-LOCAL-20261118-01",
+  "allowed_ingestion_entrypoint": "One explicitly selected data/release/manifest.json and only the payloads and fact IDs listed in it.",
+  "never_recursively_ingest": ["evaluation", "history", "staging", "audit records", "workbooks", "raw GPX/CSV", "whole source registries", "whole web pages"],
+  "minimum_fact_fields": ["fact_id", "record_uid", "record_revision", "content_sha256", "predicate", "statement_en", "value", "scope", "provenance", "qualification_en", "basis", "dependencies", "governance", "review"],
+  "minimum_scope_fields": ["reference_kind", "reference_id", "route_family", "measurement_scope", "geometry_verified", "entity_resolution"],
+  "minimum_source_fields": ["source_id", "record_revision", "source_record_sha256", "publisher", "url", "lineage_id", "licence_id", "licence_url", "reuse_scope", "attribution", "rights_review"],
+  "extension_steps": [
+    "Register a candidate source and its exact URL/revision, retrieval date, provenance lineage and permitted use scope. Save source bytes and hashes when normally obtainable; state gaps honestly.",
+    "Keep unreviewed material in staging. A source being official, publicly viewable or available on Hugging Face does not itself establish reuse rights or field accuracy.",
+    "Extract atomic claims with explicit reference version, walking endpoints, direction, unit and measurement definition. Preserve source-stated estimates as estimates.",
+    "Normalize Unicode and spacing, typed units and identifiers. Do not silently correct numbers, merge aliases, join track gaps or infer missing measurements.",
+    "Compare matching quantities and boundaries. Keep distinct route versions and independent source lineages separate. Register conflicts instead of averaging or selecting by page count.",
+    "Review source rights and each factual payload. Bind explicit human acceptance to the exact content checksum and source-record revision/hash. Changes to factual content reset affected review.",
+    "Create a new release ID and explicit fact/source allowlist. Preserve prior releases. Recheck the implementation scope and evaluation evidence when a new topic or reference is added.",
+    "Validate IDs, checksums, current-use restrictions, dependency closure and attribution. Construct a new index fingerprint from release checksum plus embedding model/revision/dimension/chunking configuration; never mix incompatible vectors.",
+    "Run relevant development checks, inspect failure cases and return the iteration for human review before freezing the next version. Roll back by selecting a prior verified release/index pair."
+  ],
+  "current_use_priority": "An excluded or suspended current-use decision overrides an older ACCEPT. Neither a valid schema nor an accepted licence admits a pending factual claim.",
+  "example_exclusion": "K09 is excluded and K01–K06 distances are suspended. W05–W06/P01–P02 and all other pending records remain outside the first prototype release.",
+  "text_construction": {
+    "fact_allowlist": ["statement_en", "qualification_en", "scope.reference_id", "scope.walk_start", "scope.walk_finish", "scope.subject"],
+    "source_context_allowlist": ["title", "publisher", "url", "attribution", "licence_id", "licence_url", "additional_notice", "history_url"],
+    "not_text_inputs": ["review comments", "prior_register fields", "scores", "development questions", "reference answers", "excluded or pending payloads"],
+    "first_chunking_rule": "One atomic fact per chunk. Preserve the complete ordered K08 endpoint sequence and each fact's qualification and reference metadata. Do not split a short record merely to create more chunks.",
+    "future_document_rule": "If later accepted source documents need longer chunks, use semantic sections with explicit route boundaries and source locators; test the change separately. A chunk size setting cannot expand the approved source use scope."
+  },
+  "licence_handling": "Keep O01 CC BY 4.0 and O03 CC BY-SA 4.0 attribution distinct, including the O03 imported CC BY-SA 3.0-work notice/history link. Do not infer licences for images, other linked sources, project code or model weights.",
+  "implementation_note": "This file describes the contract. Runtime import, index rebuild and release validation must enforce it; descriptions alone are not proof of enforcement."
+}

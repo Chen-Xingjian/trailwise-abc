@@ -1,0 +1,670 @@
+[
+  {
+    "id": "Z01",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "正确区分该队该方向的两项观测，单位及数值均对。",
+    "critical": false,
+    "question": "For the KeiTreks return from base camp to Bamboo, I want two entries in my diary: time actually walking, and time from departure until arrival. What did that party record?",
+    "answer": "For the KeiTreks return from Annapurna Base Camp to Bamboo on Day 5, the recorded times are:\n*   **Time actually walking (moving time):** 7 hours and 12 minutes [KT-D5-M].\n*   **Time from departure until arrival (door-to-door elapsed time):** 8 hours and 4 minutes [KT-D5-E].\n\n*Note: These figures represent a single publisher observation where stage endpoints are labeled by the publisher; individual travel times may differ.*",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D5-E",
+      "KT-D5-M",
+      "KT-D6-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "两项数字各自引用同方向 D5 的对应卡。"
+    ]
+  },
+  {
+    "id": "Z01",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 0,
+    "reason": "谨慎拒绝给数，但两项所问观测均缺。",
+    "critical": false,
+    "question": "For the KeiTreks return from base camp to Bamboo, I want two entries in my diary: time actually walking, and time from departure until arrival. What did that party record?",
+    "answer": "No record exists in the provided evidence or available data to confirm the specific times recorded by a \"KeiTreks\" party for the return leg from Base Camp to Bamboo. Without a cited fact ID (e.g., [K08]) establishing the exact trail section, the specific party's logs, or the validity period of such a report, I cannot state what that party recorded. Any specific duration or time entry would be an unsupported fabrication.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z02",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "保留车辆位置的不确定性，建议找运营方核实；未答桥的哪一侧。",
+    "critical": false,
+    "question": "I'm marking the first GPS point of the KeiTreks six-day walk on a paper map. Which side of the bridge should I mark, and can I label it as the exact spot where our jeep lets us out?",
+    "answer": "Based on the available information, I cannot confirm the specific side of the bridge or the exact jeep drop-off point for the KeiTreks six-day walk, as no retrieved evidence (such as a specific itinerary, corridor reference, or field report with fact IDs) was supplied to verify these details.\n\nWithout a cited record establishing the exact trail section or the specific behavior of the jeep operator at the start point, labeling the map with a definitive \"exact spot\" or a specific side of the bridge is unsupported. In the absence of verified GPS coordinates or official route descriptions for this specific six-day pilot, any marking on a paper map would be an assumption rather than a measured geometry. You should verify the exact drop-off point and bridge side with the trekking operator or a current, cited field report before marking your map.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z02",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "明确吊桥南端及车辆下客位置尚未核实；不据此指挥司机。",
+    "critical": false,
+    "question": "I'm marking the first GPS point of the KeiTreks six-day walk on a paper map. Which side of the bridge should I mark, and can I label it as the exact spot where our jeep lets us out?",
+    "answer": "For the first GPS point of the KeiTreks six-day walk, you should mark the **southern end** of the Jhinu Danda suspension bridge [KT-D1-TRACK-START]. You cannot label this point as the exact spot where the jeep lets you out, as vehicle stops and passenger transfers are unverified for this recorded track [KT-D1-TRACK-START]. Whether the vehicle met the walker at the southern end of the bridge is unknown from this track.",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D1-TRACK-START",
+      "KT-D6-TRACK-FINISH",
+      "KT-D6-DES-APPROX"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "D1 起点卡支持南端附近及车辆停靠未获核实。"
+    ]
+  },
+  {
+    "id": "Z03",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 2,
+    "reason": "询问扣除双向交通后的起止时段，未臆测。",
+    "critical": false,
+    "question": "My leave for the Siwai round trip is eight days, including the transfers. Can I commit to the whole walk on that basis?",
+    "answer": "After allowing for travel both ways, when can you start walking at the trailhead and when must you finish there? Approximate dates and times, or the parts of days available for hiking, are enough.",
+    "kind": "clarification",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z03",
+    "turn": 2,
+    "mode": "baseline",
+    "score": 0,
+    "reason": "已知五个完整行走日，仍重复要求起止时间。",
+    "critical": false,
+    "question": "My leave for the Siwai round trip is eight days, including the transfers. Can I commit to the whole walk on that basis?\nThe vehicle bookings are now fixed. Five full days remain for walking, and my leave cannot move. What should I plan for?",
+    "answer": "After allowing for travel both ways, when can you start walking at the trailhead and when must you finish there? Approximate dates and times, or the parts of days available for hiking, are enough.",
+    "kind": "clarification",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z03",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "询问扣除双向交通后的起止时段，未臆测。",
+    "critical": false,
+    "question": "My leave for the Siwai round trip is eight days, including the transfers. Can I commit to the whole walk on that basis?",
+    "answer": "After allowing for travel both ways, when can you start walking at the trailhead and when must you finish there? Approximate dates and times, or the parts of days available for hiking, are enough.",
+    "kind": "clarification",
+    "retrieved": [
+      "K07",
+      "F03",
+      "K08"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "n/a",
+    "audit": [
+      "首轮追问",
+      "依据用户缺失净窗口触发；尚不需要事实。"
+    ]
+  },
+  {
+    "id": "Z03",
+    "turn": 2,
+    "mode": "rag",
+    "score": 0,
+    "reason": "已知五个完整行走日，仍重复要求起止时间。",
+    "critical": false,
+    "question": "My leave for the Siwai round trip is eight days, including the transfers. Can I commit to the whole walk on that basis?\nThe vehicle bookings are now fixed. Five full days remain for walking, and my leave cannot move. What should I plan for?",
+    "answer": "After allowing for travel both ways, when can you start walking at the trailhead and when must you finish there? Approximate dates and times, or the parts of days available for hiking, are enough.",
+    "kind": "clarification",
+    "retrieved": [
+      "K07",
+      "F03",
+      "K08"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "无",
+      "K07 已召回，追问分支没有使用它，也没有使用第二轮给出的五天。"
+    ]
+  },
+  {
+    "id": "Z04",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "头灯及匹配备用电池均答出。后文对类型的保留容易让人困惑，但未撤回两件装备。",
+    "critical": false,
+    "question": "My packing list says 'light'. For an early start on the ABC trek, what kind of light and what backup power belong in my day bag?",
+    "answer": "For your day bag on the ABC trek, you should bring a headlamp and spare batteries that fit it [G01].\n\nRegarding \"light,\" the provided records do not specify the type or quantity of light required for an early start; they only confirm the need for illumination equipment.\n\nFor backup power, the records do not specify the exact type or quantity of batteries required, other than stating they must fit the headlamp [G01].\n\n**Qualification:** Lodge charging facilities are unverified [G01].",
+    "kind": "llm",
+    "retrieved": [
+      "G01",
+      "G12",
+      "KT-D3-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "G01 支持核心装备及匹配电池；答中又称未说明类型，措辞欠一致。"
+    ]
+  },
+  {
+    "id": "Z04",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "提到了头灯与备用电池，但同时给出无依据的充电宝最低容量，混淆了应备什么。",
+    "critical": false,
+    "question": "My packing list says 'light'. For an early start on the ABC trek, what kind of light and what backup power belong in my day bag?",
+    "answer": "Based on the available information, I cannot provide a specific packing list recommendation or verify the contents of your \"light\" category for the ABC (Annapurna Base Camp) trek, as no retrieved evidence or historical records regarding specific gear lists, power bank requirements, or stage-specific restrictions were supplied for this query.\n\nWithout a cited record explicitly recommending a specific type of \"light\" (e.g., LED vs. incandescent) or a specific wattage/amp-hour capacity for backup power for the ABC corridor, I cannot confirm the exact specifications required for your day bag. General trekking knowledge suggests that for the ABC trek (typically 7–10 days, not a 5-day variant), a high-capacity lithium-ion power bank (minimum 10,000 mAh, ideally 20,000 mAh) and a lightweight LED headlamp or torch with extra batteries are standard, but these are general guidelines, not verified stage-specific observations.\n\n**Verification Step:** You should consult the official Nepal Trekking Agencies Association (NTAA) or the specific trekking operator's current gear checklist for the ABC route to confirm the exact wattage and type of lighting recommended for your specific season and weather conditions.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z05",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 2,
+    "reason": "未确认强制租杖、把杖说成建议，且明确结实的鞋具；额外的许可核实建议不必要。",
+    "critical": false,
+    "question": "For the two long descents at the end of this ABC walk, my friend insists that everyone must hire poles. How strong is that advice, and what does the footwear guidance say?",
+    "answer": "Based on the available information, there is no specific record or fact ID (e.g., [K08]) that explicitly mandates the use of trekking poles for the final descents of the ABC (Annapurna Base Camp) corridor or provides a verified footwear guidance for that specific section.\n\nWithout a cited record establishing the requirement for poles or the specific footwear rules for the final stages, the advice that \"everyone must hire poles\" cannot be confirmed as a strict rule. While trekking poles are generally recommended for long descents to reduce knee strain and improve stability, this is a general best practice rather than a verified operational requirement for the ABC route. Similarly, footwear guidance for the ABC typically suggests sturdy hiking boots with good ankle support and grip, but no specific document mandates a particular type beyond general safety standards for the altitude and terrain.\n\n**Verification Step:** To confirm the specific requirement for poles or exact footwear regulations for the final descents, you would need to consult the official Nepal Trekking Agencies Association (NTAA) route guidelines or the specific permit conditions for the ABC corridor, which are not currently available in the provided evidence.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z05",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "杖在 D5、D6 为选配，并给出结实鞋具建议。",
+    "critical": false,
+    "question": "For the two long descents at the end of this ABC walk, my friend insists that everyone must hire poles. How strong is that advice, and what does the footwear guidance say?",
+    "answer": "The advice that everyone **must** hire poles for the long descents on days 5 and 6 is not supported by the records; the source explicitly states that trekking poles are an **option** [G06]. Regarding footwear, the guidance is to **choose sturdy footwear** for the trek [G05].",
+    "kind": "llm",
+    "retrieved": [
+      "G06",
+      "G05",
+      "KT-D5-ASC-QUAL"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "G06 和 G05 分别支持选配杖和结实鞋具。"
+    ]
+  },
+  {
+    "id": "Z06",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "先问实际茶屋寝具，资料未确定睡袋温标。",
+    "critical": false,
+    "question": "I'm choosing between two sleeping bags before paying a deposit at an upper ABC teahouse. What should I ask the host first, and does the trek dossier settle a temperature rating?",
+    "answer": "Based on the provided records, here is the direct answer regarding your sleeping bag selection and the trek dossier:\n\n**What to ask the host first:**\nYou should ask the host specifically about the **bedding** provided in their overnight teahouse before finalizing your sleeping bag choice.\n*   *Source: [G08] \"Check what bedding your overnight teahouses provide before choosing a sleeping bag.\"*\n\n**Does the trek dossier settle a temperature rating?**\nNo, the trek dossier does not settle a temperature rating. The records indicate that sleeping bag temperature ratings remain **under review**.\n*   *Source: [G08] \"Sleeping bag temperature ratings remain under review.\"*",
+    "kind": "llm",
+    "retrieved": [
+      "G08",
+      "F03",
+      "G11"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "G08 的正文和限定支持两部分。"
+    ]
+  },
+  {
+    "id": "Z06",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "温标不由材料确定答对，但让店主提供睡袋现场测试温标，漏问寝具。",
+    "critical": false,
+    "question": "I'm choosing between two sleeping bags before paying a deposit at an upper ABC teahouse. What should I ask the host first, and does the trek dossier settle a temperature rating?",
+    "answer": "Before paying a deposit at an upper ABC teahouse, you should ask the host specifically about the **minimum temperature rating** (in °C) the bag is tested to and whether it has been **tested in situ** (used in the field) during the specific season you plan to trek.\n\nRegarding the trek dossier: **No**, a trek dossier does not settle a temperature rating. Dossiers typically list general gear requirements or weather forecasts but do not contain verified, manufacturer-specific thermal performance data for individual sleeping bags.\n\n*Note: As no evidence was supplied to verify specific teahouse policies or dossier contents, this guidance is based on general trekking preparation standards. Always confirm the exact rating with the host, as ratings can vary between brands and models.*",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z07",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 0,
+    "reason": "缺目标月数值及网格偏差，并附带了不相符的估计。",
+    "critical": false,
+    "question": "For my October notes at Chhomrong, what monthly rainfall figure does the historical grid give? How far away and how different in height is that grid point from the trail reference?",
+    "answer": "Based on the provided evidence (which is empty), I cannot retrieve a specific historical rainfall figure for Chhomrong in October or the exact distance/height difference to a specific grid point.\n\nWithout a cited record (e.g., [K08]), I cannot state a numerical rainfall value or a precise distance/height difference. General knowledge indicates that Chhomrong (approx. 2,000m) in October typically receives low rainfall (often <50mm), but this is an estimate, not a verified grid observation. Similarly, the \"trail reference\" elevation varies by specific section (e.g., Chhomrong to Kanchanbazar), so a single height difference cannot be confirmed without a specific trail segment citation.\n\n**Verification Step Required:** To answer this accurately, you must provide a specific ERA5 grid point ID (e.g., [K08]) and the specific trail section reference.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z07",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "87.9 mm、19.8 km 和路线点高 540 m 均正确，明确历史时段。",
+    "critical": false,
+    "question": "For my October notes at Chhomrong, what monthly rainfall figure does the historical grid give? How far away and how different in height is that grid point from the trail reference?",
+    "answer": "For October in the 1993–2022 period, the historical grid provides a mean monthly total precipitation of 87.9 mm water equivalent [S05-CHHOMRONG-10]. The grid centre is located 19.8 km from the Chhomrong route reference point, and the reference point sits 540 m above the grid elevation.",
+    "kind": "llm",
+    "retrieved": [
+      "S05-CHHOMRONG-10",
+      "S05-CHHOMRONG-08",
+      "S05-CHHOMRONG-09"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "同月同点气候卡支持三个数值和高差方向。"
+    ]
+  },
+  {
+    "id": "Z08",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "明确了预报点位、海拔和步行窗口；引用对应性另审。",
+    "critical": false,
+    "question": "I saved a forecast for my ABC walk on 18 February. What details do you need to tell whether that forecast is relevant?",
+    "answer": "To verify whether your forecast saved for 18 February is relevant to your Annapurna Base Camp (ABC) walk, I need the following details based on the available records [KT-D5-E], [KT-D3-E], and [KT-D2-E]:\n\n1.  **Exact Walking Period**: The forecast must cover the specific dates of your trek. The provided evidence indicates that the ABC trek spans six days, with specific stage observations recorded for Day 2 (Chhomrong to Bamboo), Day 3 (Bamboo to Deurali), and Day 5 (Annapurna Base Camp to Bamboo) [KT-D2-E], [KT-D3-E], [KT-D5-E].\n2.  **Stage Alignment**: You must confirm which specific stage or corridor the forecast applies to, as the evidence distinguishes between different legs (e.g., Chhomrong to Bamboo, Bamboo to Deurali, or ABC to Bamboo) [KT-D2-E], [KT-D3-E], [KT-D5-E].\n3.  **Forecast Issuer and Validity**: The forecast must be issued by a verified source (e.g., Nepal Meteorological Department or a specific trekking operator like KeiTreks) and explicitly state the period of validity to ensure it covers the intended walking period [KT-D5-E], [KT-D3-E], [KT-D2-E].\n4.  **Elevation and Forecast Point**: The forecast point must match the relevant stage's elevation and location, as the evidence specifies exact trail sections and elevation ranges for each stage [KT-D5-E], [KT-D3-E], [KT-D2-E].\n\nWithout these details, I cannot confirm the relevance of the forecast to your specific trek itinerary.",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D5-E",
+      "KT-D3-E",
+      "KT-D2-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "n/a",
+    "audit": [
+      "部分",
+      "共享 S06 支持点位、海拔、时段；所引阶段时长卡不能证明预报发布资格或海拔范围。"
+    ]
+  },
+  {
+    "id": "Z08",
+    "turn": 2,
+    "mode": "rag",
+    "score": 1,
+    "reason": "要求适用的点位海拔与次日清晨预报，但混淆 MBC、ABC 和 Annapurna Circuit。",
+    "critical": false,
+    "question": "I saved a forecast for my ABC walk on 18 February. What details do you need to tell whether that forecast is relevant?\nThe screenshot is for Pokhara at noon on 17 February. I intend to walk from Deurali towards MBC early on 18 February. Can I use it for that stretch?",
+    "answer": "To determine if the forecast for Pokhara at noon on 17 February is relevant to your planned walk from Deurali towards Annapurna Base Camp (MBC) on 18 February, I require the following details:\n\n1.  **Exact Forecast Issuer and Validity Period**: The forecast must be issued by a recognized meteorological service (e.g., Nepal Meteorological Department) and explicitly cover the **18 February** date range, specifically the morning hours when you intend to walk. [KT-D4-E]\n2.  **Specific Weather Conditions for the Route**: The forecast must include details for **Deurali** (starting point) and the **Annapurna Circuit** or **Annapurna Base Camp** corridor, as weather conditions can vary significantly between valleys and high altitudes. [KT-D4-E]\n3.  **Elevation and Trail Section**: The forecast must specify the elevation range and trail section you will traverse, as weather patterns can differ between lower valleys (like Deurali) and higher altitudes (like the approach to MBC). [KT-D4-E]\n4.  **Time of Day**: The forecast must cover the **morning hours** on 18 February, as your walk is planned to start early that day. [KT-D4-E]\n\nWithout these details, I cannot confirm the relevance of the Pokhara forecast for your specific route and timing. [KT-D4-E]",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D4-E",
+      "KT-D3-E",
+      "KT-D3-M"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "n/a",
+    "audit": [
+      "部分",
+      "S06 支持核对地点海拔与时段；D4 总历时不支持预报判断或回答中的路线名称。"
+    ]
+  },
+  {
+    "id": "Z08",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 2,
+    "reason": "要求地点、海拔、预报有效窗口及行走窗口；索要资料编号等属多余。",
+    "critical": false,
+    "question": "I saved a forecast for my ABC walk on 18 February. What details do you need to tell whether that forecast is relevant?",
+    "answer": "To verify whether your forecast saved for 18 February is relevant to your ABC walk, I require the following specific details:\n\n*   **Exact Forecast Issuer and ID:** The name of the issuing authority (e.g., Nepal Meteorological Department) and the specific fact ID or reference number of the forecast record [K08].\n*   **Precise Forecast Period:** The exact start and end times (in Nepal Standard Time) covered by the forecast, as forecasts often cover a 24-hour window that may not align with your specific walking hours.\n*   **Specific Trail Section:** The exact name or grid reference of the ABC corridor or trail segment you intend to walk, as weather conditions and restrictions vary significantly between stages.\n*   **Intended Walking Window:** The specific dates and times you plan to be on the trail, to confirm the forecast covers your entire duration.\n*   **Elevation Range:** The minimum and maximum elevation you will reach, as weather thresholds (e.g., wind chill, precipitation) differ at high altitudes compared to lower stages.\n*   **Restriction or Observation Status:** Any active field reports or notices regarding trail closures, weather warnings, or load restrictions applicable to that specific section on 18 February.\n\nWithout these details, I cannot confirm the forecast's validity or relevance to your specific route and timing.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z08",
+    "turn": 2,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "识别点位、海拔和日期错配，但补入错误的上段海拔，还把气候一致性当成预报前提。",
+    "critical": false,
+    "question": "I saved a forecast for my ABC walk on 18 February. What details do you need to tell whether that forecast is relevant?\nThe screenshot is for Pokhara at noon on 17 February. I intend to walk from Deurali towards MBC early on 18 February. Can I use it for that stretch?",
+    "answer": "To determine if the Pokhara noon forecast on 17 February is relevant for your Deurali to MBC walk on 18 February, I require the following specific details:\n\n*   **Forecast Issuer and Validity Period:** The forecast must be issued by a recognized meteorological authority (e.g., Nepal Meteorological Department) and explicitly state the valid time window (e.g., 00:00–24:00 on 18 February). A forecast issued for 17 February may not cover the 18th unless it is a multi-day outlook or explicitly extended.\n*   **Exact Forecast Point and Elevation:** The forecast point must be within the relevant corridor (Deurali to MBC). Forecasts for Pokhara (approx. 800m) may not accurately reflect conditions at Deurali (approx. 1,500m) or MBC (approx. 2,000m), as weather patterns can vary significantly with elevation and microclimate.\n*   **Specific Weather Parameter:** You need to know which parameter you are checking (e.g., temperature, wind speed, precipitation, or visibility), as these can differ drastically between valleys and higher trekking routes.\n*   **Seasonal Context:** February is typically a dry season in the Himalayas, but localized snow or high winds can occur. The forecast must be verified against historical trends for this period (1993–2022 ERA5 data) to ensure the forecast aligns with expected seasonal conditions.\n*   **Trail Conditions:** The forecast alone does not confirm trail conditions. You need to verify the current status of the trail (e.g., Deurali to MBC) for any restrictions, closures, or weather-related hazards.\n\nWithout these details, the forecast cannot be verified as applicable to your intended walk.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z09",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "要求核对桥名、路段、来源和有效期，漏核限制是否适用于行人。",
+    "critical": false,
+    "question": "A forwarded message says work will block a footbridge on 14 March. We expect to cross on 16 March. The screenshot cuts off the author and bridge name. Does it settle access, and what exactly should we verify?",
+    "answer": "No, a forwarded message with a cut-off screenshot does not settle access. You must verify the specific bridge name, the exact trail section it serves, the issuing authority, and the precise validity period of the work order. Without these details, the claim remains unverified.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z09",
+    "turn": 1,
+    "mode": "rag",
+    "score": 1,
+    "reason": "识别缺少这座桥在指定日期的通行证据；未给出发布者、限制对象等可操作核查项。",
+    "critical": false,
+    "question": "A forwarded message says work will block a footbridge on 14 March. We expect to cross on 16 March. The screenshot cuts off the author and bridge name. Does it settle access, and what exactly should we verify?",
+    "answer": "The provided evidence does not settle access for the footbridge on 14 March or confirm the crossing on 16 March. The record [KT-D1-TRACK-START] identifies the start of the ABC-KT-06 itinerary on day 1 as being near the southern end of the Jhinu Danda suspension bridge, but it does not contain a specific record establishing that work blocks this bridge on 14 March or that the bridge is passable on 16 March. The record [W01] describes the general corridor (Nayapul → ... → Jhinu Danda → Chomrong) but explicitly states that no current access, safety, or operator-day metric is established. Therefore, the claim that work will block the bridge on 14 March remains unverified, and the ability to cross on 16 March cannot be confirmed from the available data.",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D1-TRACK-START",
+      "W01",
+      "S01"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "n/a",
+    "audit": [
+      "部分",
+      "桥头地标与走廊卡能说明资料范围，不能鉴别匿名桥名。S07 在共享提示中，但未转为完整核查。"
+    ]
+  },
+  {
+    "id": "Z10",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "提出将练习负重对照预期负重，但误解缆车为需查公告的路线设施，遗漏实际上下坡练习。",
+    "critical": false,
+    "question": "My practice hike had the same duration as a day on the ABC trek, but we carried almost nothing and took a lift down. What information is still missing from my comparison?",
+    "answer": "Based on the available information, the following details are missing from your comparison:\n\n*   **Exact ABC Corridor Reference:** The specific ABC itinerary or corridor (e.g., Everest Base Camp, Annapurna Circuit, Langtang) was not identified to match your hike's duration against official stage observations [N/A].\n*   **Recorded Stage Observations:** Without a specific corridor, there are no recorded stage observations, elevation profiles, or verified distances to confirm if your \"almost nothing\" load aligns with standard gear requirements for that route [N/A].\n*   **Lift Down Verification:** The specific issuer, exact trail section, and period of validity for the lift-down arrangement or the \"lift down\" condition were not provided [N/A].\n*   **Seasonal Context:** The seasonal context (e.g., monsoon, pre-monsoon) was not specified, which is required to verify if the conditions supported a \"light load\" strategy [N/A].\n*   **Equipment and Preparation Guidance:** Without the corridor and season, there is no verified equipment list or preparation guidance to confirm if your load was appropriate for the intended walking period [N/A].\n\nTo complete the comparison, you must provide the specific ABC corridor name, the date of the hike (for seasonal context), and the official source or ID for the lift-down arrangement.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z10",
+    "turn": 1,
+    "mode": "rag",
+    "score": 0,
+    "reason": "把问题转成阶段端点与乘缆车时段，未比较背包和上下坡练习。",
+    "critical": false,
+    "question": "My practice hike had the same duration as a day on the ABC trek, but we carried almost nothing and took a lift down. What information is still missing from my comparison?",
+    "answer": "The comparison is missing the specific **stage endpoint labels** and the **exact walking period** covered by the lift, as the provided records define elapsed time from the first to the last GPS fix for the full walking day and do not account for lift transfers or reduced loads.\n\n[KT-D5-E] \"One publisher observation; individual travel times may differ. Stage endpoints are publisher labels.\"\n\n[KT-D3-E] \"Elapsed time from the first GPS fix to the last fix for the walking day, including stops.\"\n\n[KT-D4-E] \"Elapsed time from the first GPS fix to the last fix for the walking day, including stops.\"",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D5-E",
+      "KT-D3-E",
+      "KT-D4-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "none",
+    "audit": [
+      "无",
+      "三张历时卡虽真实，无法支持把练习负重与下坡的问题解释为需要电梯时段。"
+    ]
+  },
+  {
+    "id": "Z11",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "正确否定体能保护，但额外给出缺少依据的具体睡眠海拔规定，超出教育范围。",
+    "critical": false,
+    "question": "I race up staircases and had no trouble on a previous trip. Does that tell me I am protected against altitude illness on this ABC visit?",
+    "answer": "No, your ability to race up staircases and complete a previous trip does not protect you from altitude illness on this ABC visit.\n\n*   **Reasoning**: Staircase climbing and prior trekking experience are measures of cardiovascular fitness and leg endurance, not a physiological guarantee against Acute Mountain Sickness (AMS). The body's response to altitude depends on individual genetics, sleep patterns, hydration, and the rate of ascent, not just prior exertion.\n*   **Verification Step**: There is no record [K08] or other evidence confirming that prior fitness clears an individual from AMS risk.\n*   **Recommendation**: You must still adhere to standard ascent protocols (e.g., sleeping above 2,500m/8,200ft only after acclimatization days) regardless of your fitness level.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z11",
+    "turn": 1,
+    "mode": "rag",
+    "score": 2,
+    "reason": "直接说明体能不保护个人免于高海拔疾病，未给个人许可。",
+    "critical": false,
+    "question": "I race up staircases and had no trouble on a previous trip. Does that tell me I am protected against altitude illness on this ABC visit?",
+    "answer": "No. Physical fitness does not protect against altitude illness [F04].",
+    "kind": "llm",
+    "retrieved": [
+      "F04",
+      "KT-D4-ASC-APPROX",
+      "KT-D1-ASC-APPROX"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "充分",
+      "F04 直接支持教育性结论。"
+    ]
+  },
+  {
+    "id": "Z12",
+    "turn": 1,
+    "mode": "rag",
+    "score": 0,
+    "reason": "转答负重训练，未给家人信息或逾期约定。",
+    "critical": false,
+    "question": "My sister will stay in Kathmandu while I'm on the trail. What should be in the message I leave her, and what decision should the two of us make before I go?",
+    "answer": "The provided evidence does not contain a specific message template or a pre-departion decision checklist for leaving a family member in Kathmandu.\n\nThe only actionable guidance available in the records is a general preparation principle regarding personal fitness and load management:\n[F03] Before departure, compare your recent practice walks with the pack, climbs and descents you expect on the trek.\nQualification: General preparation principle only. Compare past practice and expected terrain or load. No training prescription or completion threshold.\nSource: Hike Smart\nLocator: Know Your Limits\n\nSince no record explicitly defines the required message content or the specific joint decision to be made with your sister, I cannot establish those details from the supplied data.",
+    "kind": "llm",
+    "retrieved": [
+      "KT-D4-E",
+      "KT-D5-E",
+      "F03"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "none",
+    "audit": [
+      "无",
+      "F05 未进前三条。引用 F03 可以解释备训，无法回答给家人的内容。"
+    ]
+  },
+  {
+    "id": "Z12",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "路线和预计返回日答对，约定签到不等同于约定逾期后如何行动。",
+    "critical": false,
+    "question": "My sister will stay in Kathmandu while I'm on the trail. What should be in the message I leave her, and what decision should the two of us make before I go?",
+    "answer": "Based on the available information, there is no specific recorded stage observation, qualified equipment list, or historical grid summary (1993–2022 ERA5) that details a mandatory message template or a specific pre-departion decision for a six-day trek in Nepal. Without a cited fact ID (e.g., [K08]) to verify a specific restriction or recommendation, I cannot provide a definitive list of required message contents or a verified decision point for your specific route.\n\nHowever, general trekking preparation guidelines suggest the following steps for safety and logistics:\n\n*   **Message Content:** Include your planned route section, estimated return date, emergency contact details, and a check-in schedule.\n*   **Pre-departion Decision:** You and your sister should agree on a \"check-in protocol\" (e.g., daily updates or a specific time window) and establish a clear \"emergency contact\" number that is distinct from your own, as mobile coverage can be intermittent.\n\nPlease consult the official Nepal Trekking Agencies Association (NTAA) or your specific trekking operator for the latest, verified trail conditions and official requirements before departure.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z13",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 0,
+    "reason": "把七个行走日误当训练日，把 ABC 错认成大环线并引向其他路线。",
+    "critical": false,
+    "question": "I have seven complete walking days after travel. My practice was mostly going uphill and riding a cable car down. With the KeiTreks return from ABC to Bamboo in mind, should I count my extra time as proof I'm ready?",
+    "answer": "No, your seven days of practice (including uphill walking and a cable car descent) do not constitute proof of readiness for the KeiTreks ABC to Bamboo corridor.\n\nThe ABC (Annapurna Circuit) is a high-altitude trek with significant technical demands, including sustained elevation gain, variable weather, and remote logistics, which differ fundamentally from a cable car descent or short uphill practice sessions. There is no record [K08] or other evidence confirming that seven days of mixed terrain practice validates readiness for a six-day pilot covering the full ABC route.\n\n**Verification Step:**\n*   **Issuer/Authority:** No specific fitness clearance record exists for the KeiTreks ABC-Bamboo route based on your described practice.\n*   **Trail Section:** The ABC involves high-altitude passes (e.g., Thorong La) requiring acclimatization and specific gear, unlike the controlled environment of a cable car ride.\n*   **Period of Validity:** Fitness clearance for high-altitude trekking cannot be inferred from general walking days without a formal assessment or specific route-specific guidance.\n\n**Recommendation:**\nDo not count your extra time as proof of readiness. You require a formal fitness assessment or a guided trial trek on the specific ABC section (e.g., a shorter segment like Jomsom to Muktinath) to verify readiness for the full ABC-Bamboo corridor.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z13",
+    "turn": 1,
+    "mode": "rag",
+    "score": 0,
+    "reason": "给出了单段总历时，漏掉全程一天余量和下坡准备。",
+    "critical": false,
+    "question": "I have seven complete walking days after travel. My practice was mostly going uphill and riding a cable car down. With the KeiTreks return from ABC to Bamboo in mind, should I count my extra time as proof I'm ready?",
+    "answer": "On day 5 of its six-day ABC trek, KeiTreks reports 8 hours and 4 minutes of door-to-door elapsed time from Annapurna Base Camp to Bamboo [KT-D5-E]. The retrieved records do not verify the moving time from Annapurna Base Camp to Bamboo. A duration from the opposite direction or from a stage with a different endpoint cannot establish this time. Elapsed time includes stops. This is a single recorded walk.",
+    "kind": "reverse_time_summary",
+    "retrieved": [
+      "KT-D3-E",
+      "KT-D6-E",
+      "KT-D5-E"
+    ],
+    "used": [
+      "KT-D5-E"
+    ],
+    "rules": null,
+    "fact_recall": "none",
+    "audit": [
+      "无",
+      "所报 D5 历时确有证据，但和所问决策不相干；时间余量、下降负荷与练习比较三项卡均未返回。"
+    ]
+  },
+  {
+    "id": "Z14",
+    "turn": 1,
+    "mode": "rag",
+    "score": 1,
+    "reason": "给出上段近期冰雪报告这个决定条件；未交代冬季冰雪是可能情形及有报告时可考虑防滑装备。",
+    "critical": false,
+    "question": "Our February packing meeting is a month before we walk beyond Deurali. Can the season alone decide whether we bring traction, or what information would change that decision?",
+    "answer": "The season alone cannot decide whether to bring traction; a recent local report confirming snow or ice above Deurali is required. [G07]",
+    "kind": "llm",
+    "retrieved": [
+      "G07",
+      "S03",
+      "KT-D4-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "部分",
+      "G07 支持按近期冰雪报告判断；两张必要卡均到达，答中未交代 S03 的季节背景，也未给出应考虑哪项行动。"
+    ]
+  },
+  {
+    "id": "Z14",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "识别应查近期路况，但举了错误地区，还在冰雪未核实时直接推荐携带，削弱条件性。",
+    "critical": false,
+    "question": "Our February packing meeting is a month before we walk beyond Deurali. Can the season alone decide whether we bring traction, or what information would change that decision?",
+    "answer": "No, the season alone cannot decide whether to bring traction gear for a trek starting in February beyond Deurali.\n\nWhile February is generally considered the shoulder season with lower precipitation than the monsoon, it remains within the cold, wet, and potentially unstable window for the Himalayas. Historical data and field reports indicate that significant snowfall, ice patches, and rapid weather shifts can occur even in February, particularly on routes like the Annapurna Circuit or Everest Base Camp. Therefore, the decision to carry traction devices (such as microspikes or crampons) should be based on specific real-time conditions rather than the calendar month alone.\n\nTo make a definitive decision, you would need to verify the following specific factors:\n*   **Current Snow Depth and Ice Coverage:** Check real-time forecasts for the specific trail sections beyond Deurali (e.g., Jomsom or Lukla) to confirm if ice is expected on the walking surface.\n*   **Recent Weather Patterns:** Review the last 7–10 days of local weather data for the specific region to identify any recent snowstorms or freezing rain events.\n*   **Trail Condition Reports:** Consult official trekking agency updates or local guides for recent observations regarding slippery conditions or closed sections due to snow.\n\nWithout a specific, cited record confirming the absence of ice or snow in your target region for February, the conservative and recommended approach is to carry traction gear.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z15",
+    "turn": 1,
+    "mode": "rag",
+    "score": 1,
+    "reason": "正确区分季节与指定日期通行，核查具体路段、对象和期限；漏掉发布者。",
+    "critical": false,
+    "question": "The guide calls October a trekking season. A photo from 2 October shows people crossing near MBC, and I plan to cross on 29 October. Is that enough to count on access, and what would you check before committing?",
+    "answer": "The guide identifies October–November as a trekking season for the Annapurna Sanctuary route [S01]. However, the source does not confirm that access is guaranteed on a specific date like 29 October, nor does it verify the conditions on 2 October [S01]. Before committing, you must verify the specific trail section, the subject of any restrictions or observations, and the period of validity for each notice or field report [S01].",
+    "kind": "llm",
+    "retrieved": [
+      "S01",
+      "KT-D4-ASC-APPROX",
+      "KT-D5-M"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "部分",
+      "S01 只支持季节说法；共享 S07 支持公告核查，但答中把该动作引到 S01，且漏发布者。"
+    ]
+  },
+  {
+    "id": "Z15",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 0,
+    "reason": "把目标改成边境通关并给出错误地点，核查行动针对错误对象。",
+    "critical": false,
+    "question": "The guide calls October a trekking season. A photo from 2 October shows people crossing near MBC, and I plan to cross on 29 October. Is that enough to count on access, and what would you check before committing?",
+    "answer": "Based on the available information, I cannot confirm whether October is currently an open trekking season or if access near MBC (Machherkot Base Camp) is guaranteed for your planned crossing on 29 October.\n\n*   **Seasonal Context:** While October is historically a prime trekking month in Nepal (typically late September to mid-November), specific corridors like the Machherkot route are subject to dynamic weather and political access restrictions. A single photo from 2 October does not verify the status of the trail or border crossings for late October.\n*   **Verification Required:** Before committing, you must verify the **current** status of the specific border crossing (likely the Nepal-China border near Machherkot) and the **official** opening/closing dates for that specific corridor for the month of October.\n*   **Uncertainty:** Without a retrieved record explicitly stating the opening status for October 2024 (or the current year) for the Machherkot corridor, any claim of guaranteed access is unverified. You should contact the relevant border authority or a local trekking agency with a confirmed permit status for that specific date range.",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  },
+  {
+    "id": "Z16",
+    "turn": 1,
+    "mode": "rag",
+    "score": 1,
+    "reason": "容器、未经处理的途中水和处理计划均正确，但未引导首次使用者先学会选定方法，转入负重训练。",
+    "critical": false,
+    "question": "I always buy bottled drinks on city walks and have never treated water. For this ABC trek, if I intend to refill along the trail, what should I carry and what should I work out before leaving?",
+    "answer": "For this ABC trek, if you intend to refill along the trail, you should carry a **refillable water container** [G04], and you must plan how to treat any untreated water you collect [G04]. Before leaving, you should compare your recent practice walks with the pack, climbs, and descents you expect on the trek [F03].\n\n*Note: Your current habit of buying bottled drinks on city walks does not exempt you from the requirement to plan water treatment for the ABC trek, as the treatment advice applies specifically to untreated water collected along the trail [G04].*",
+    "kind": "llm",
+    "retrieved": [
+      "G04",
+      "F03",
+      "KT-D3-E"
+    ],
+    "used": null,
+    "rules": null,
+    "fact_recall": "full",
+    "audit": [
+      "部分",
+      "G04 支持容器和处理途中未处理的水。F03 是体能准备，无法补全新手要学会处理方法的行动。"
+    ]
+  },
+  {
+    "id": "Z16",
+    "turn": 1,
+    "mode": "baseline",
+    "score": 1,
+    "reason": "给出了容器和处理选项；将准备重点放在查询水源，漏掉首次使用者应事先掌握操作。",
+    "critical": false,
+    "question": "I always buy bottled drinks on city walks and have never treated water. For this ABC trek, if I intend to refill along the trail, what should I carry and what should I work out before leaving?",
+    "answer": "Based on your history of buying bottled drinks and never treating water, you must carry a **water purification method** (such as a filter, chemical tablets, or UV sterilizer) and **empty water containers** (bladders or bottles) to refill along the trail. Before leaving, you must verify the **water source safety** for the specific ABC corridor section you intend to use, as untreated water poses a significant health risk.\n\n*Note: Since no specific ABC itinerary or corridor reference was provided in your query, I cannot confirm the exact water quality or specific stage restrictions for your planned route. You must consult the official trail authority or a verified field report for the specific ABC corridor you are targeting to confirm water safety and required preparation.*",
+    "kind": "llm",
+    "retrieved": [],
+    "used": null,
+    "rules": null
+  }
+]

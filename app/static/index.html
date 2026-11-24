@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d33">
+  <meta name="description" content="A local research pilot for exploring reviewed Annapurna trekking information with clear sources and evidence limits.">
+  <title>Trailwise — Nepal trekking, grounded in evidence</title>
+  <link rel="stylesheet" href="/static/styles.css?v=compare-2">
+  <script type="module" src="/static/app.js?v=shared-live-checks"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to the question workspace</a>
+  <header class="site-header shell">
+    <a class="brand" href="#" aria-label="Trailwise home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M6 25 15 10l5 8 4-6 8 13M11 25l5-8 5 8"/></svg></span>
+      <span>trailwise<span class="brand-period">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#workspace">Ask the trail</a>
+      <a href="#scope">Our coverage</a>
+    </nav>
+    <details class="system-details" id="system-details">
+      <summary class="connection-pill"><span class="status-dot" id="connection-dot"></span><span id="connection-label">Checking local setup</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+      <div class="system-popover">
+        <p class="eyebrow">LOCAL SETUP</p>
+        <strong id="model-status-title">Checking connection…</strong>
+        <p id="model-status-detail">Reading the current model and evidence status.</p>
+        <dl class="setup-facts"><div><dt>Reviewed facts</dt><dd id="setup-facts-count">—</dd></div><div><dt>Evidence retrieval</dt><dd id="setup-retrieval">Checking</dd></div></dl>
+        <button class="text-button" type="button" id="refresh-status">Refresh status <span aria-hidden="true">↻</span></button>
+      </div>
+    </details>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <div class="eyebrow hero-eyebrow"><span></span> NEPAL TREKKING · RESEARCH PILOT</div>
+        <h1 id="hero-heading">A clearer view<br>of the <em>trail.</em></h1>
+        <p class="hero-description">Explore reviewed route information for the Annapurna Sanctuary. Find the source behind an answer, and understand where the evidence ends.</p>
+        <a class="hero-link" href="#workspace">Start with a question <span aria-hidden="true">↘</span></a>
+        <div class="hero-notes"><span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg> Source-linked answers</span><span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2 3 4v4c0 3 5 6 5 6s5-3 5-6V4Z"/></svg> Clear evidence limits</span></div>
+      </div>
+      <div class="landscape-card">
+        <div class="landscape-heading"><span class="coordinate-label">ANNAPURNA SANCTUARY</span><span class="compass-mark" aria-hidden="true">N<br>↑</span></div>
+        <svg class="landscape" viewBox="0 0 620 420" fill="none" role="img" aria-labelledby="landscape-title landscape-desc">
+          <title id="landscape-title">An illustrated Himalayan mountain landscape</title>
+          <desc id="landscape-desc">Layered mountain silhouettes and a decorative path. This illustration is not a route map.</desc>
+          <defs>
+            <linearGradient id="sky" x1="310" y1="0" x2="310" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#e7eadc"/><stop offset="1" stop-color="#cbd8c4"/></linearGradient>
+            <linearGradient id="front" x1="300" y1="233" x2="300" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#355a47"/><stop offset="1" stop-color="#173d33"/></linearGradient>
+            <pattern id="contour" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M-20 40C5 0 70 0 100 40M-20 54C5 14 70 14 100 54M-20 68C5 28 70 28 100 68" stroke="#fff" stroke-opacity=".15" stroke-width=".8"/></pattern>
+          </defs>
+          <rect width="620" height="420" fill="url(#sky)"/>
+          <circle cx="449" cy="84" r="30" fill="#f3e6b9"/>
+          <path d="M0 268 85 171l54 53L245 75l76 99 46-39 128 140 57-54 68 81v118H0Z" fill="#a3b6a1"/>
+          <path d="m166 185 79-110 76 99-39-16-28 16-20-32-18 29-28-5Z" fill="#f5f2df"/>
+          <path d="m321 174 46-39 48 52-32-10-17 11-18-23Z" fill="#f0efde"/>
+          <path d="M0 285 73 246l58 19 89-75 75 91 69-55 71 67 91-51 94 67v111H0Z" fill="#7f9b7e"/>
+          <path d="M0 334 89 274l65 54 94-77 91 76 81-66 96 93 104-37v103H0Z" fill="#557c60"/>
+          <path d="M0 365 107 329l69 36 116-71 100 55 85-42 143 81v32H0Z" fill="url(#front)"/>
+          <path d="M0 365 107 329l69 36 116-71 100 55 85-42 143 81v32H0Z" fill="url(#contour)"/>
+          <path d="M301 420c-29-15-36-24-26-34 12-13 58-10 57-27-1-13-37-14-34-29 1-9 20-15 25-25" stroke="#e6b179" stroke-width="2.5" stroke-dasharray="5 7" stroke-linecap="round"/>
+          <circle cx="323" cy="305" r="5" fill="#efbe85" stroke="#173d33" stroke-width="3"/>
+          <path d="M32 31h20M42 21v20M568 376h20M578 366v20" stroke="#325346" stroke-opacity=".45"/>
+        </svg>
+        <div class="landscape-caption"><span class="illustration-label">A place to begin, not a complete map.</span><span class="illustration-id">FIELD NOTES / 01</span></div>
+      </div>
+    </section>
+
+    <section class="workspace-section shell" id="workspace" aria-labelledby="workspace-heading">
+      <div class="section-heading"><div><span class="eyebrow">THE QUESTION WORKSPACE</span><h2 id="workspace-heading">Ask with a little more context.</h2></div><span class="language-label">ENGLISH QUESTIONS & ANSWERS</span></div>
+          <div class="demo-questions"><p class="eyebrow">TRY A DEMO QUESTION</p>
+            <div class="demo-list">
+              <button type="button" class="example-button">How long did KeiTreks spend moving from Deurali to Annapurna Base Camp on day four?</button>
+              <button type="button" class="example-button">On the Ghandruk itinerary, what is the first walking stage?</button>
+              <button type="button" class="example-button">Which is wetter in August on the historical climate grid, Chhomrong or Annapurna Base Camp?</button>
+              <button type="button" class="example-button">What should I bring for the six-day ABC trek from Siwai?</button>
+            </div>
+          </div>
+      <div id="service-notice" class="service-notice" role="status" hidden></div>
+      <div class="workspace-grid">
+        <section class="question-panel" aria-labelledby="question-panel-heading">
+          <nav class="conversation-nav" aria-label="Conversation history"><div class="panel-heading"><h3>Chats</h3><button type="button" class="new-chat" id="clear-question">+ New chat</button></div><ul id="conversation-list"></ul><p class="storage-note" id="storage-note">Saved in this browser.</p></nav>
+          <div class="panel-heading"><h3 id="question-panel-heading">Your question</h3></div>
+          <form id="question-form">
+            <fieldset class="mode-fieldset"><legend>Answer mode</legend>
+              <div class="mode-switch">
+                <button class="mode-button is-active" type="button" data-mode="compare" aria-pressed="true">Compare both</button>
+                <button class="mode-button" type="button" data-mode="rag" aria-pressed="false">With RAG</button>
+                <button class="mode-button" type="button" data-mode="baseline" aria-pressed="false">Without RAG</button>
+              </div>
+            </fieldset>
+            <label class="field-label" for="reference-select">Which route? <span>Optional</span></label>
+            <div class="select-wrap"><select id="reference-select" name="reference_id"><option value="">All routes in this guide</option></select><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></div>
+            <label class="field-label question-label" for="question-input">What would you like to understand?</label>
+            <textarea id="question-input" name="question" rows="5" maxlength="1200" placeholder="For example, how many days does it take to walk to Annapurna Base Camp and back from Siwai?" required aria-describedby="question-hint"></textarea>
+            <div class="input-meta"><span id="question-hint">Ask about the route, weather or trail conditions.</span><span id="character-count" aria-hidden="true">0 / 1200</span></div>
+            <button class="ask-button" id="ask-button" type="submit"><span id="ask-button-text">Compare answers</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></button>
+            <p class="keyboard-hint"><kbd>⌘</kbd> / <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to ask</p>
+          </form>
+
+        </section>
+
+        <section class="answer-panel" id="answer-panel" aria-labelledby="answer-panel-heading" aria-busy="false">
+          <div class="panel-heading answer-panel-top"><h3 id="answer-panel-heading">Answers</h3><span class="small-label" id="answer-mode-label">SIDE BY SIDE</span></div>
+          <div id="chat-history"></div>
+          <div class="empty-state" id="empty-state"><span class="empty-compass" aria-hidden="true"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="30"/><circle cx="40" cy="40" r="23"/><path d="m49 29-4 17-15 5 5-17Z"/><path d="M40 5v10M40 65v10M5 40h10M65 40h10"/></svg></span><h4>Good questions.<br>Traceable answers.</h4><p>Ask about a trek or a place along the trail.</p><div class="empty-footnote"><span></span> This pilot keeps uncertainty visible.</div></div>
+          <div class="loading-state" id="loading-state" role="status" hidden><span class="loading-ring" aria-hidden="true"></span><h4 id="loading-label">Finding relevant records…</h4><p>A local model may take a moment to respond.</p></div>
+          <template id="answer-template"><article class="answer-content conversation-turn">
+            <p class="asked-question" data-part="asked-question"></p>
+            <div class="turn-responses"></div>
+            <button type="button" class="reply-here clear-button">Reply to this answer</button>
+          </article></template>
+          <template id="response-template"><section class="response">
+            <div class="answer-state-row"><span class="answer-kind" data-part="answer-kind"></span><span class="response-time" data-part="response-time"></span></div>
+            <div class="answer-text" data-part="answer-text" aria-live="polite"></div>
+            <p class="preview-explanation" data-part="preview-explanation" hidden>These are retrieved records, not a generated model answer. Connect the local model to test answer generation.</p>
+            <div class="answer-warnings" data-part="answer-warnings" hidden></div>
+            <details class="evidence-section" data-part="evidence-section"><summary class="evidence-heading">View sources <span data-part="evidence-count"></span></summary><div data-part="evidence-list" class="evidence-list"></div></details>
+            <div class="answer-footer" data-part="answer-footer"></div>
+          </section></template>
+          <template id="reply-template"><form class="followup-form"><label><span>Follow up on this answer</span><textarea rows="2" maxlength="1200" placeholder="Ask a follow-up…" required></textarea></label><div class="followup-actions"><small data-part="followup-focus"></small><button type="submit">Send follow-up</button></div><p class="reply-error" role="status" hidden></p></form></template>
+        </section>
+      </div>
+    </section>
+
+    <section class="scope-section shell" id="scope" aria-labelledby="scope-heading">
+      <div class="scope-intro"><span class="eyebrow">A SMALL, DELIBERATE START</span><h2 id="scope-heading">Useful information begins<br>with honest boundaries.</h2><p>This pilot explores a limited set of reviewed Annapurna references. A source description is not a live trail report or an independent field measurement.</p><details id="source-watch"><summary>Reviewed source changes</summary><div id="source-watch-result" role="status"></div></details><div class="scope-stat"><strong id="reviewed-fact-count">—</strong><span>human-reviewed factual records<br>in this local release</span></div></div>
+      <div class="scope-cards"><article class="scope-card"><div class="scope-card-icon" aria-hidden="true">01</div><div><h3>What you can explore</h3><p>Reviewed stages, weather forecasts for three reference points and dated trail notices along the ABC corridor.</p><span class="scope-tag">Named references, with attribution</span></div></article><article class="scope-card"><div class="scope-card-icon muted" aria-hidden="true">02</div><div><h3>What is still outside the evidence</h3><p>Verified distances, real-time confirmation of safe passage and personal fitness clearance remain outside this pilot.</p><span class="scope-tag muted">Missing evidence stays missing</span></div></article></div>
+    </section>
+    <section class="how-section shell" aria-label="How this pilot works"><div><span class="how-number">01</span><p><strong>Ask a bounded question.</strong><span>Mention where you plan to start walking.</span></p></div><div><span class="how-number">02</span><p><strong>Read the supporting records.</strong><span>See the source, scope, and licence.</span></p></div><div><span class="how-number">03</span><p><strong>Keep the limits in view.</strong><span>Unverified details are not filled in.</span></p></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="brand footer-brand" href="#">trailwise<span class="brand-period">.</span></a><p>Document-grounded trekking information.<br>Research pilot · English · Local-first</p><span class="release-label" id="release-label">Review release loading</span></footer>
+</body>
+</html>

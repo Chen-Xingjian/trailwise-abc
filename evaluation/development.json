@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "NEPAL-LOCAL-DEV-20261118-01",
+  "created_on": "2026-11-18",
+  "data_release_id": "NEPAL-RAG-LOCAL-20261118-01",
+  "source_review_release_id": "NEPAL-PILOT-REVIEW-FROZEN-20261118-R03",
+  "source_development_file_sha256": "2db4ddfa84ed5ef0639020b8888e09dc2e7c40ebfb49c4c6c2389f13b8f79cd9",
+  "implementation_scope_id": "NEPAL-LOCAL-PROTOTYPE-SCOPE-01",
+  "implementation_scope_path": "data/release/scope.json",
+  "protocol_adoption": "Assistant implementation choice under the user's explicit request to finish the two preparation steps and develop the local minimal prototype; this is not a new human acceptance of individual reference answers.",
+  "human_reference_answer_acceptance_recorded": false,
+  "generation_runs_authorized_as_local_development": true,
+  "execution_state": "NOT_RUN",
+  "executed": false,
+  "final_test_set": false,
+  "retrieval_use": false,
+  "selected_item_ids": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D06",
+    "D08",
+    "D09",
+    "D12"
+  ],
+  "item_count": 8,
+  "maximum_points": 24,
+  "score_groups": {
+    "FACTUAL": {
+      "count": 6,
+      "maximum_points": 18
+    },
+    "BOUNDARY": {
+      "count": 2,
+      "maximum_points": 6
+    }
+  },
+  "fair_comparison_rules": [
+    "Use the same actual local generation model, quantization, shared scope instruction, question wording, generation parameters and output budget.",
+    "Neither condition browses or receives live weather; only the RAG condition receives retrieved evidence.",
+    "Use the same corpus-independent scope limits and ambiguity rules in both conditions.",
+    "Score factual content using the same three-point criteria. Do not penalize baseline for lacking retrieved citations.",
+    "Report six factual items and two boundary items separately. Boundary compliance alone does not demonstrate retrieval improvement.",
+    "Measure RAG retrieval coverage and supported citations separately; a citation existing does not establish that it supports a claim.",
+    "A preview or deterministic scope message is not an LLM response and must not be reported as a model-comparison result.",
+    "Missing or failed runs stay missing, not zero-scored successes; do not fill manual grades automatically.",
+    "Keep this file, reference answers, rubrics and human scores outside the retrieval corpus.",
+    "Use a separately checked unseen final set later. These questions are development material and are not evidence of general route-planning accuracy."
+  ],
+  "metrics": {
+    "shared_content": "Manual 0–3 score per item with the listed material-error rule; report factual subtotal /18 and boundary subtotal /6 separately.",
+    "rag_only": [
+      "required-fact coverage at fixed top_k",
+      "citation support correctness",
+      "unsupported factual claims",
+      "latency"
+    ],
+    "results": null
+  },
+  "items": [
+    {
+      "item_id": "D01",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Reference boundary and count",
+      "question_en": "What walking start, finish and number of walking days does ABC-KT-06 describe?",
+      "reference_answer_en": "The KeiTreks reference starts at Siwai and finishes at Siwai, with six published walking days. This is the reference itinerary, not a guaranteed completion time or the total time needed for international and road travel.",
+      "required_fact_ids": [
+        "K07",
+        "K08"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "K07",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > whole-route summary > Days 6 (reader line 39).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "31f238c6d73e65721ee70c4d9cc455980238920f1fc47f5475454b45b0f84c03",
+          "current_candidate_fact_sha256": "31f238c6d73e65721ee70c4d9cc455980238920f1fc47f5475454b45b0f84c03"
+        },
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Identifies Siwai as the walking start."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies Siwai as the walking finish."
+          },
+          {
+            "points": 1,
+            "criterion": "Gives six walking days for this reference, without presenting it as a guaranteed or universally recommended duration."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Substitutes another walking boundary or treats the six walking days as a guaranteed complete travel duration."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D01",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D02",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Day-stage endpoints",
+      "question_en": "According to the six ordered stage labels in ABC-KT-06, where does Day 4 start and finish?",
+      "reference_answer_en": "Day 4 runs from Deurali to Annapurna Base Camp in the KeiTreks reference. The answer identifies published stage endpoints only; it supplies no admitted distance.",
+      "required_fact_ids": [
+        "K08"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Identifies Deurali as the start."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies Annapurna Base Camp as the finish."
+          },
+          {
+            "points": 1,
+            "criterion": "Keeps the answer attached to Day 4 of this named reference, rather than a different segment or a complete trail geometry."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Replaces the Deurali start with MBC or reverses the reference stage."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D02",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D03",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Return-stage endpoints",
+      "question_en": "Which endpoints does ABC-KT-06 give for Day 5, and where does the six-stage reference finally finish?",
+      "reference_answer_en": "Day 5 runs from Annapurna Base Camp to Bamboo. The final walking finish of the complete reference is Siwai. These are reference-stage labels, not a verified timing or distance prediction.",
+      "required_fact_ids": [
+        "K08"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Identifies Annapurna Base Camp as the Day 5 start."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies Bamboo as the Day 5 finish."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies Siwai as the final finish of the complete reference."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Reverses the Day 5 direction or presents Bamboo as the final finish of the complete reference."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D03",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D04",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Corridor ordering",
+      "question_en": "According to ABC-WV-CORRIDOR, list the waypoints from Dobhan to Machhapuchhare Base Camp in order.",
+      "reference_answer_en": "Dobhan → Himalaya → Hinku Cave → Deurali → Bagar → Machhapuchhare Base Camp. This is the community guide’s described order, not independently verified GPS geometry or a statement of current access.",
+      "required_fact_ids": [
+        "W03"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "W03",
+          "source_id": "O03",
+          "source_url": "https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510",
+          "source_locator": "Walk > Dobhan - Machhapuchhare Base Camp, first route-description paragraph (reader line 205).",
+          "source_revision": "5366510",
+          "base_candidate_fact_sha256": "c7df9651922a6a1b66f294aa183099bde3dbc1ad6dab14c5d251debcf4399971",
+          "current_candidate_fact_sha256": "c7df9651922a6a1b66f294aa183099bde3dbc1ad6dab14c5d251debcf4399971"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Places Himalaya before Hinku Cave."
+          },
+          {
+            "points": 1,
+            "criterion": "Places Deurali before Bagar, after Hinku Cave."
+          },
+          {
+            "points": 1,
+            "criterion": "Retains the Dobhan start, MBC finish and complete overall order."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Inserts the Ghorepani–Poon Hill branch into this segment or changes its MBC finish to ABC."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D04",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D06",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Cross-reference boundary comparison",
+      "question_en": "What walking start is described for ABC-KT-06, what approach start appears in W01 of ABC-WV-CORRIDOR, and do shared place names establish that they are the same complete route version?",
+      "reference_answer_en": "ABC-KT-06 starts at Siwai. The selected W01 approach description starts at Nayapul. Shared place names do not establish that the complete references have identical boundaries or geometry; the itinerary reference and the corridor description must remain separate.",
+      "required_fact_ids": [
+        "K08",
+        "W01"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        },
+        {
+          "fact_id": "W01",
+          "source_id": "O03",
+          "source_url": "https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510",
+          "source_locator": "Walk > Nayapul - Chomrong (approach), two route-description paragraphs (reader lines 195–196).",
+          "source_revision": "5366510",
+          "base_candidate_fact_sha256": "fee3d5fa66b0a4c546fd3e17ff5b7a3a18ce4dc6efb5aa41abb36f9e402fee8f",
+          "current_candidate_fact_sha256": "fee3d5fa66b0a4c546fd3e17ff5b7a3a18ce4dc6efb5aa41abb36f9e402fee8f"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Identifies the KT06 walking start as Siwai."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies the W01 approach start as Nayapul."
+          },
+          {
+            "points": 1,
+            "criterion": "Explains that shared place names do not prove complete route-version or geometry equivalence."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Treats the two starts as interchangeable or declares the complete routes identical solely from shared names."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D06",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D08",
+      "item_revision": 2,
+      "score_group": "ANSWERABLE",
+      "question_type": "Measurement boundary transfer",
+      "question_en": "Compare the Day 4 endpoints in ABC-KT-06 with the final MBC–ABC connection in ABC-WV-CORRIDOR. Are they the same bounded segment, and may a measurement for the first be assigned to the second without matching evidence?",
+      "reference_answer_en": "The KT06 Day 4 labels describe Deurali → ABC, while W04 describes MBC → ABC; W03 places MBC after Deurali in its described corridor. Their starts differ. A measurement attached to the first cannot be transferred to the second without separate evidence matching the endpoints and measurement definition. No numerical distance is supplied by this answer.",
+      "required_fact_ids": [
+        "K08",
+        "W03",
+        "W04"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [],
+      "evidence": [
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        },
+        {
+          "fact_id": "W03",
+          "source_id": "O03",
+          "source_url": "https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510",
+          "source_locator": "Walk > Dobhan - Machhapuchhare Base Camp, first route-description paragraph (reader line 205).",
+          "source_revision": "5366510",
+          "base_candidate_fact_sha256": "c7df9651922a6a1b66f294aa183099bde3dbc1ad6dab14c5d251debcf4399971",
+          "current_candidate_fact_sha256": "c7df9651922a6a1b66f294aa183099bde3dbc1ad6dab14c5d251debcf4399971"
+        },
+        {
+          "fact_id": "W04",
+          "source_id": "O03",
+          "source_url": "https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510",
+          "source_locator": "Walk > Machhapuchhare Base Camp - Annapurna Base Camp, first route-description paragraph (reader line 212).",
+          "source_revision": "5366510",
+          "base_candidate_fact_sha256": "9c8c76ca1f10085f33e956ce54165ed46065a9b33d8bef3a2e840a3c943e1cff",
+          "current_candidate_fact_sha256": "9c8c76ca1f10085f33e956ce54165ed46065a9b33d8bef3a2e840a3c943e1cff"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Identifies the KT06 Day 4 endpoints as Deurali → ABC."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies the W04 endpoints as MBC → ABC and notes the differing start."
+          },
+          {
+            "points": 1,
+            "criterion": "Rejects measurement transfer without evidence matching the segment and quantity definition."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Treats the two bounded segments as identical or transfers a stage measurement solely because they share ABC as their finish."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D08",
+      "comparison_group": "FACTUAL",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D09",
+      "item_revision": 2,
+      "score_group": "CHALLENGE",
+      "question_type": "Ambiguity and scope",
+      "question_en": "How many kilometres is the ABC trek?",
+      "reference_answer_en": "First clarify the named route version, walking start and finish, one-way versus return, and included branches. The current pilot scope does not supply a usable verified total for the exact reference. Do not give one universal ABC distance or reconstruct a replacement from excluded or suspended fields. This is a statement about corpus coverage, not a claim that no distance could be measured in reality.",
+      "required_fact_ids": [
+        "K08",
+        "W01"
+      ],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [
+        "NEPAL-LOCAL-PROTOTYPE-SCOPE-01"
+      ],
+      "evidence": [
+        {
+          "fact_id": "K08",
+          "source_id": "O01",
+          "source_url": "https://keitreks.com/gpx",
+          "source_locator": "Annapurna Base Camp > Full trek Siwai → Siwai; six Day 1–6 labels (reader lines 33, 50).",
+          "source_revision": null,
+          "base_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+          "current_candidate_fact_sha256": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188"
+        },
+        {
+          "fact_id": "W01",
+          "source_id": "O03",
+          "source_url": "https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&oldid=5366510",
+          "source_locator": "Walk > Nayapul - Chomrong (approach), two route-description paragraphs (reader lines 195–196).",
+          "source_revision": "5366510",
+          "base_candidate_fact_sha256": "fee3d5fa66b0a4c546fd3e17ff5b7a3a18ce4dc6efb5aa41abb36f9e402fee8f",
+          "current_candidate_fact_sha256": "fee3d5fa66b0a4c546fd3e17ff5b7a3a18ce4dc6efb5aa41abb36f9e402fee8f"
+        }
+      ],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Requests or identifies the route version and walking endpoints."
+          },
+          {
+            "points": 1,
+            "criterion": "Clarifies one-way versus return and optional-branch inclusion."
+          },
+          {
+            "points": 1,
+            "criterion": "Explains the current evidence limitation and avoids a universal or reconstructed precise total."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Gives one exact distance for all ABC itineraries or reconstructs a planning total from the inactive fields."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D09",
+      "comparison_group": "BOUNDARY",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    },
+    {
+      "item_id": "D12",
+      "item_revision": 2,
+      "score_group": "CHALLENGE",
+      "question_type": "Outside scope",
+      "question_en": "Can you confirm that Ama Dablam is safe to climb tomorrow and provide a summit route using this pilot?",
+      "reference_answer_en": "This pilot cannot verify tomorrow’s conditions or supply an Ama Dablam summit itinerary. Its scope is document-grounded trekking references and limited place metadata, not live conditions or summit-expedition planning. Current conditions require current appropriate authoritative checks, and expedition planning requires suitably qualified support beyond this corpus.",
+      "required_fact_ids": [],
+      "required_bundle_ids": [],
+      "scope_evidence_ids": [
+        "NEPAL-LOCAL-PROTOTYPE-SCOPE-01"
+      ],
+      "evidence": [],
+      "scoring": {
+        "maximum_points": 3,
+        "criteria": [
+          {
+            "points": 1,
+            "criterion": "Makes no tomorrow-safety guarantee."
+          },
+          {
+            "points": 1,
+            "criterion": "Does not invent or supply a summit itinerary from the pilot."
+          },
+          {
+            "points": 1,
+            "criterion": "Identifies the need for current appropriate checks and suitably qualified expedition planning beyond the corpus."
+          }
+        ],
+        "critical_error_override": "Set content score to 0 only for the listed material critical error; record its category separately.",
+        "critical_error": "Declares tomorrow’s climb safe or fabricates summit instructions from this pilot."
+      },
+      "availability_status": "ACCEPTED_FACT_PREREQUISITES_PENDING_IMPLEMENTATION_PREFLIGHT",
+      "executable_now": false,
+      "formal_test_item": false,
+      "awaiting_fact_acceptance": [],
+      "release_conditions": [
+        "Use this exact six-fact release and implementation scope in both conditions.",
+        "Perform a genuine configured-model health check; no preview, mock or canned answer counts as an LLM run.",
+        "Log the model identifier, quantization where known, generation settings, release checksum and actual retrieved IDs.",
+        "Keep content grading separate from retrieval/citation diagnostics; human content scores remain pending until reviewed."
+      ],
+      "required_fact_acceptance_complete": true,
+      "source_item_id": "D12",
+      "comparison_group": "BOUNDARY",
+      "executed": false,
+      "content_score": null,
+      "reference_answer_human_review_recorded": false
+    }
+  ]
+}

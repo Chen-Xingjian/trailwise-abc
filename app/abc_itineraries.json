@@ -1,0 +1,210 @@
+{
+  "checked_on": "2026-11-25",
+  "scope": "One published example per approach. Timetable comparison only. Published road transfers describe the itinerary, not current road access. Operator distance bands were checked separately and are not measured totals for these schedules.",
+  "records": [
+    {
+      "key": "jhinu",
+      "label": "Jhinu Danda",
+      "publisher": "Haven Holidays Nepal",
+      "url": "https://www.havenholidaysnepal.com/blogs/annapurna-base-camp-trek-from-pokhara-detailed-itinerary",
+      "locator": "Five-day detailed itinerary and altitude/time summary, days 1–5",
+      "walking_start": "Jhinu Danda",
+      "walking_finish": "Jhinu Danda",
+      "pokhara_return_documented": true,
+      "qualification": "The tight schedule has no spare day. Its timing table gives 7–8 hours descending on day 4; another table gives 6–8. Allow for a long descent and confirm both jeeps.",
+      "days": [
+        {
+          "walk": "Jhinu Danda → Sinuwa",
+          "transfer": "Pokhara → Jhinu Danda before walking"
+        },
+        {
+          "walk": "Sinuwa → Deurali via Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Deurali → ABC via Machhapuchhre Base Camp",
+          "transfer": null
+        },
+        {
+          "walk": "ABC → Sinuwa",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays gives 7–8 hours in its time summary and 6–8 hours in another table. Allow for a long descent; these are published estimates."
+        },
+        {
+          "walk": "Sinuwa → Jhinu Danda",
+          "transfer": "Jhinu Danda → Pokhara after walking"
+        }
+      ]
+    },
+    {
+      "key": "siwai",
+      "label": "Siwai six-day reference",
+      "publisher": "KeiTreks",
+      "url": "https://keitreks.com/gpx",
+      "locator": "Annapurna Base Camp, full trek and days 1–6; frozen records K07, K08, KT-D1-TRACK-START and KT-D6-TRACK-FINISH",
+      "walking_start": "Siwai (itinerary label)",
+      "walking_finish": "Siwai (itinerary label)",
+      "pokhara_return_documented": false,
+      "qualification": "The track begins near the south end of the Jhinu Danda suspension bridge and ends near the mapped Jhinu Danda Bus Stop. These are recording landmarks. Pickup and total days from Pokhara are unverified.",
+      "days": [
+        {
+          "walk": "Siwai → Chhomrong",
+          "transfer": null
+        },
+        {
+          "walk": "Chhomrong → Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Bamboo → Deurali",
+          "transfer": null
+        },
+        {
+          "walk": "Deurali → ABC via Machhapuchhre Base Camp",
+          "transfer": null
+        },
+        {
+          "walk": "ABC → Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Bamboo → Siwai",
+          "transfer": null
+        }
+      ]
+    },
+    {
+      "key": "ghandruk",
+      "label": "Ghandruk village start",
+      "publisher": "Haven Holidays Nepal",
+      "url": "https://www.havenholidaysnepal.com/blogs/annapurna-base-camp-trek-via-ghandruk",
+      "locator": "Seven-day itinerary table and Days 6–7 return narrative",
+      "walking_start": "Ghandruk",
+      "walking_finish": "Jhinu Danda",
+      "pokhara_return_documented": true,
+      "qualification": "Day 6 ends at Bamboo or Sinuwa in the source; day 7 explicitly starts at Sinuwa. The sequence here uses the Sinuwa option. Day 1 village sightseeing is outside the walking-stage count.",
+      "days": [
+        {
+          "walk": null,
+          "transfer": "Pokhara → Ghandruk"
+        },
+        {
+          "walk": "Ghandruk → Chhomrong",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays estimates 5–6 hours of walking on this stage."
+        },
+        {
+          "walk": "Chhomrong → Dovan",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays estimates 5–6 hours of walking on this stage."
+        },
+        {
+          "walk": "Dovan → Deurali",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays estimates 4–5 hours of walking on this stage."
+        },
+        {
+          "walk": "Deurali → ABC via Machhapuchhre Base Camp",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays estimates 5–6 hours of walking on this stage."
+        },
+        {
+          "walk": "ABC → Sinuwa via Bamboo",
+          "transfer": null,
+          "walking_time_note": "Haven Holidays estimates 6–7 hours of walking on this stage."
+        },
+        {
+          "walk": "Sinuwa → Jhinu Danda",
+          "transfer": "Jhinu Danda → Pokhara after walking",
+          "walking_time_note": "Haven Holidays estimates 5–6 hours of walking on this stage."
+        }
+      ]
+    },
+    {
+      "key": "nayapul",
+      "label": "Nayapul / Birethanti approach",
+      "publisher": "Desire Adventures",
+      "url": "https://desireadventures.com/trips/short-annapurna-base-camp/",
+      "locator": "Detailed itinerary, days 01–07",
+      "walking_start": "Nayapul",
+      "walking_finish": "Nayapul",
+      "pokhara_return_documented": true,
+      "qualification": "This operator starts and finishes walking at Nayapul. A Birethanti-only start or a different exit needs its own schedule.",
+      "days": [
+        {
+          "walk": "Nayapul → Ghandruk",
+          "transfer": "Pokhara → Nayapul before walking"
+        },
+        {
+          "walk": "Ghandruk → Sinuwa",
+          "transfer": null
+        },
+        {
+          "walk": "Sinuwa → Deurali",
+          "transfer": null
+        },
+        {
+          "walk": "Deurali → ABC via Machhapuchhre Base Camp",
+          "transfer": null
+        },
+        {
+          "walk": "ABC → Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Bamboo → Jhinu Hot Spring",
+          "transfer": null
+        },
+        {
+          "walk": "Jhinu Hot Spring → Nayapul",
+          "transfer": "Nayapul → Pokhara after walking"
+        }
+      ]
+    },
+    {
+      "key": "poon",
+      "label": "Ghorepani and Poon Hill extension",
+      "publisher": "Green Compass Treks",
+      "url": "https://greencompasstreks.com/treks/annapurna-base-camp-with-ghorepani-poonhill-from-pokhara",
+      "locator": "Trip overview and day-by-day itinerary, days 1–8",
+      "walking_start": "Ghorepani",
+      "walking_finish": "Jhinu Danda",
+      "pokhara_return_documented": true,
+      "qualification": "The approach to Ghorepani is by jeep in this version. Longer approaches on foot have different timings and distances. The closing narrative calls this eight walking days; the day headings specify driving on day 1. Counts follow the daily activities.",
+      "days": [
+        {
+          "walk": null,
+          "transfer": "Pokhara → Ghorepani"
+        },
+        {
+          "walk": "Ghorepani → Poon Hill → Tadapani",
+          "transfer": null
+        },
+        {
+          "walk": "Tadapani → Chhomrong",
+          "transfer": null
+        },
+        {
+          "walk": "Chhomrong → Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Bamboo → Deurali",
+          "transfer": null
+        },
+        {
+          "walk": "Deurali → ABC",
+          "transfer": null
+        },
+        {
+          "walk": "ABC → Bamboo",
+          "transfer": null
+        },
+        {
+          "walk": "Bamboo → Jhinu Danda",
+          "transfer": "Jhinu Danda → Pokhara after walking"
+        }
+      ]
+    }
+  ]
+}

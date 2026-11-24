@@ -1,0 +1,101 @@
+{
+  "totals": {
+    "rag": 19,
+    "baseline": 12
+  },
+  "matrix": {
+    "route": {
+      "rag": [
+        2,
+        2,
+        0
+      ],
+      "baseline": [
+        0,
+        1,
+        0
+      ]
+    },
+    "gear": {
+      "rag": [
+        2,
+        2,
+        2
+      ],
+      "baseline": [
+        1,
+        2,
+        1
+      ]
+    },
+    "weather": {
+      "rag": [
+        2,
+        1,
+        1
+      ],
+      "baseline": [
+        0,
+        1,
+        1
+      ]
+    },
+    "preparation": {
+      "rag": [
+        0,
+        2,
+        0
+      ],
+      "baseline": [
+        1,
+        1,
+        1
+      ]
+    },
+    "combined": {
+      "rag": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "baseline": [
+        0,
+        1,
+        0,
+        1
+      ]
+    }
+  },
+  "opening": {
+    "Z03": {
+      "rag": 2,
+      "baseline": 2
+    },
+    "Z08": {
+      "rag": 2,
+      "baseline": 2
+    }
+  },
+  "critical": {
+    "rag": 0,
+    "baseline": 0
+  },
+  "paired": {
+    "win": 7,
+    "tie": 7,
+    "loss": 2
+  },
+  "gates": {
+    "total": false,
+    "domains": false,
+    "combined": false,
+    "no_zero": false,
+    "zero_critical": true,
+    "advantage": true
+  },
+  "blind_gate": false,
+  "candidate": "R37",
+  "human_review": "provisional; pending user review",
+  "round": "R38 final; no further tuning on these questions"
+}

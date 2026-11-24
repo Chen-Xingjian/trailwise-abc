@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "release_id": "NEPAL-RAG-LOCAL-20261118-01",
+  "created_on": "2026-11-18",
+  "stage": "LOCAL_PROTOTYPE_REVIEWED_SUBSET",
+  "local_prototype_use": true,
+  "production_ready": false,
+  "base_review_release": {
+    "id": "NEPAL-PILOT-REVIEW-FROZEN-20261118-R03",
+    "manifest_sha256": "585e1f725e4c3e0b920ff9db0d7562b442758a0f71ae55725af70b4868e969fa"
+  },
+  "source_review_file_hashes": {
+    "facts.draft.jsonl": "4ac198adf399953c907f329cace14156009c2216bce1988077d0a2e5e3394091",
+    "sources.draft.jsonl": "9bd300877e182be84024c5306213814f3700931f430640ae796927f5956b4657",
+    "current_use_registry.audit.jsonl": "0ded32cd3a7411188462b6c1a2ff7f6ff0782f800218b2c48a12552a2e3df167"
+  },
+  "fact_file": "facts.jsonl",
+  "source_file": "sources.jsonl",
+  "scope_file": "scope.json",
+  "attribution_file": "ATTRIBUTION.txt",
+  "fact_count": 6,
+  "source_count": 2,
+  "allowed_fact_ids": [
+    "K07",
+    "K08",
+    "W01",
+    "W02",
+    "W03",
+    "W04"
+  ],
+  "accepted_fact_hashes": {
+    "K07": "31f238c6d73e65721ee70c4d9cc455980238920f1fc47f5475454b45b0f84c03",
+    "K08": "113f5d8eee5fab03bcc52c4e97488839c9f955a430f217b88d277636068eb188",
+    "W01": "fee3d5fa66b0a4c546fd3e17ff5b7a3a18ce4dc6efb5aa41abb36f9e402fee8f",
+    "W02": "b9990d44e88733b5ba1197b0ba56d7d12968718a086e729a29891332e5777c12",
+    "W03": "c7df9651922a6a1b66f294aa183099bde3dbc1ad6dab14c5d251debcf4399971",
+    "W04": "9c8c76ca1f10085f33e956ce54165ed46065a9b33d8bef3a2e840a3c943e1cff"
+  },
+  "allowed_source_ids": [
+    "O01",
+    "O03"
+  ],
+  "source_record_hashes": {
+    "O01": "211f3f93d3e7a21fec72314891a1dd15ba8feb5ceb164e2e43fc93705f389f11",
+    "O03": "f501da1f17adeb84ded2d2a7629ae1470b9bbf58ac86d9704e81e7590349aede"
+  },
+  "licence_ids": [
+    "CC-BY-4.0",
+    "CC-BY-SA-4.0"
+  ],
+  "licence_notes": "O01 selected fields: CC BY 4.0. O03 adapted text: CC BY-SA 4.0; preserve imported CC BY-SA 3.0-work notice and contributor history. No whole-site or image permission is inferred.",
+  "source_lineage_limit": "KeiTreks labels and a community guide are documentary evidence; they are not independent trail surveys or current-condition checks.",
+  "files": {
+    "facts.jsonl": {
+      "sha256": "fc77ff9228888d352987a51bba4b01943aecec09e1eb521c7265c88615c4be63",
+      "bytes": 13844
+    },
+    "sources.jsonl": {
+      "sha256": "66a850a20df740cc79b06d9641a40a6b800567aafba18f3fa596e652c20b4355",
+      "bytes": 6008
+    },
+    "scope.json": {
+      "sha256": "6f327f09748563d5d50a9874de020a3f752d4a2bd03b047130e5eb6df5609aa7",
+      "bytes": 3000
+    },
+    "ATTRIBUTION.txt": {
+      "sha256": "a9f1ed418d321a1ab1fc1e343710a75edc040f211d162581acc55fd3694c6f89",
+      "bytes": 1787
+    }
+  },
+  "frozen_origin_preserved": true,
+  "excluded_fact_ids": [
+    "K09"
+  ],
+  "suspended_fact_ids": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06"
+  ]
+}

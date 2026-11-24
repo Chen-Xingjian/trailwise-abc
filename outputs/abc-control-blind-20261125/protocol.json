@@ -1,0 +1,23 @@
+{
+  "first_arm_by_case": [
+    "rag",
+    "baseline",
+    "baseline",
+    "rag",
+    "rag",
+    "baseline",
+    "baseline",
+    "rag",
+    "rag",
+    "baseline",
+    "baseline",
+    "rag",
+    "rag",
+    "baseline",
+    "baseline",
+    "rag"
+  ],
+  "attempts": 1,
+  "sample": "12 single-domain (3 each) and 4 two-turn integrated cases. Handwritten after repair. Both arms start clean, no external live tools, same decoding settings and top-k 3 for RAG.",
+  "grading": "Final turn per case 0/1/2, total 32; report first turns of integrated cases separately. 2 = correct, completes requested units, action and scope, no material false detail. 1 = correct core but incomplete, wrong display unit, or an unsupported material detail; an honest specific abstention on a knowable log value earns 1 only with a useful verification step. 0 = wrong value or route, blanket refusal, unsafe assurance, or no useful answer. No citation points in content grading. Verify arm-specific evidence separately. Uncertainty is full credit where the task asks whether something can be inferred and the limits are explained. Lock anonymous grading before decoding labels; single assessor; style can give away arm. Compare whole systems including structured answers."
+}
