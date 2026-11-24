@@ -2,6 +2,10 @@
 
 Trailwise is an English-language web app for hikers planning an Annapurna Base Camp (ABC) trek in Nepal. It compares five published approaches and answers questions about walking time, equipment, weather and preparation. A split-screen chat lets you ask the same question with and without retrieval-augmented generation (RAG), then inspect the evidence behind the guide’s reply.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Chen-Xingjian/trailwise-abc/blob/main/notebooks/abc_rag_walkthrough.ipynb)
+
+**Try the notebook in your browser.** Click the badge and choose **Runtime → Run all**. The default CPU runtime downloads the public data and installs the walkthrough dependencies. The data check should show **84 accepted facts, 19 source records and 84 chunks**. You can inspect a real retrieval result and its prompt, then compare archived model answers. For fresh model responses, use the Mac app below.
+
 ![Trailwise displaying its side-by-side answer comparison](outputs/demo-comparison.jpg)
 
 ## Try the conversation
