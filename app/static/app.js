@@ -9,7 +9,7 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
     panel: $("answer-panel"), empty: $("empty-state"), loading: $("loading-state"),
     notice: $("service-notice"),
     modeButtons: [...document.querySelectorAll(".mode-button")],
-    examples: [...document.querySelectorAll(".example-button")],
+    demoQuestion: $("demo-question"), demoFollowup: $("demo-followup"),
   };
   let local;
   try { local = window.localStorage; } catch { /* Private browser with no storage. */ }
@@ -67,6 +67,18 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
     }
   }
 
+  function demoParent() {
+    const question = ui.demoQuestion.textContent.trim().toLowerCase();
+    return state.chat?.turns.findLast(turn => turn.mode === "compare"
+      && turn.question.trim().toLowerCase() === question
+      && turn.data.rag?.answer_kind !== "error" && turn.data.baseline?.answer_kind !== "error");
+  }
+
+  function updateDemoButtons() {
+    ui.demoQuestion.disabled = state.busy;
+    ui.demoFollowup.disabled = state.busy || !demoParent();
+  }
+
   function setBusy(busy) {
     state.busy = busy;
     ui.panel.setAttribute("aria-busy", String(busy));
@@ -74,7 +86,8 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
     ui.ask.classList.toggle("is-loading", busy);
     ui.reference.disabled = busy;
     ui.clear.disabled = busy;
-    for (const button of [...ui.modeButtons, ...ui.examples]) button.disabled = busy;
+    for (const button of ui.modeButtons) button.disabled = busy;
+    updateDemoButtons();
     for (const button of document.querySelectorAll(".followup-form button, .reply-here, #conversation-list button")) button.disabled = busy;
     document.body.classList.toggle("is-busy", busy);
     if (busy) {
@@ -404,6 +417,7 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
   function renderTurn(turn) {
     const {data, question} = turn;
     const article = $("answer-template").content.firstElementChild.cloneNode(true);
+    article.dataset.turnId = turn.id;
     const part = name => article.querySelector(`[data-part="${name}"]`);
     part("asked-question").textContent = question;
     const parent = state.chat.turns.find(item => item.id === turn.parent);
@@ -482,6 +496,7 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
     state.freshQuestion = false;
     updateCount();
     state.chat.turns.forEach(renderTurn);
+    updateDemoButtons();
     renderList();
   }
 
@@ -498,6 +513,7 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
       method: "POST", headers: {"Content-Type": "application/json"},
       body: JSON.stringify({question, mode, reference_id: reference, top_k: 3, offer_live_checks: mode === "rag",
         chat_context: previous?.chat_context, trail_focus: previous?.trail_focus,
+        prior_plan: previous?.planning_budget ?? (previous?.answer_kind === "variant_plan" ? {} : undefined),
         prior_planning_question: previous?.planning_question, variant_context: previous?.variant_context,
         distance_followup: previous?.answer_kind === "route_distance",
         planning_followup: ["clarification", "itinerary_budget"].includes(previous?.answer_kind)}),
@@ -590,16 +606,23 @@ import { factName, licenceName, monitoredName, readerAnswer, readerText, routes 
   });
   ui.reference.addEventListener("change", () => { state.freshQuestion = true; });
   for (const button of ui.modeButtons) button.addEventListener("click", () => setMode(button.dataset.mode));
-  for (const button of ui.examples) {
-    button.addEventListener("click", () => {
-      state.freshQuestion = true;
-      ui.question.value = button.textContent.trim();
-      ui.reference.value = "";
-      ui.question.setCustomValidity("");
-      updateCount();
-      ui.question.focus();
-    });
-  }
+  ui.demoQuestion.addEventListener("click", () => {
+    setMode("compare");
+    state.freshQuestion = true;
+    ui.reference.value = "";
+    ui.question.value = ui.demoQuestion.textContent.trim();
+    ui.question.setCustomValidity("");
+    updateCount();
+    ui.question.focus();
+  });
+  ui.demoFollowup.addEventListener("click", () => {
+    const parent = demoParent();
+    if (!parent) return;
+    const article = $("chat-history").querySelector(`[data-turn-id="${CSS.escape(parent.id)}"]`);
+    attachReply(parent, article);
+    replyInput.value = ui.demoFollowup.textContent.trim();
+    replyInput.focus();
+  });
   $("refresh-status").addEventListener("click", refreshStatus);
   document.addEventListener("click", (event) => {
     if (!$("system-details").contains(event.target)) $("system-details").open = false;

@@ -47,7 +47,9 @@ from app.turn_context import TrailFocus, TrailSubjects
 from app.variant_plans import (
     ROUTE_TERMS,
     PlanContext,
+    PriorPlan,
     comparison_followup,
+    expand_plan,
     matching_routes,
     plan_places,
     requested_stage,
@@ -75,6 +77,7 @@ class AskRequest(BaseModel):
     offer_live_checks: bool = False
     variant_context: PlanContext | None = None
     distance_followup: bool = False
+    prior_plan: PriorPlan | None = None
     planning_followup: bool = False
     reference_id: str | None = None
     top_k: int = Field(default=3, ge=1, le=6)
@@ -243,8 +246,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 return {**context_fields, **measurement, "release_id": release.manifest["release_id"]}
             plan = None
             if not selected_option:
-                plan = route_followup(question, body.variant_context, release) or variant_answer(
-                    question, body.variant_context, focus, body.distance_followup, body.reference_id)
+                plan = (
+                    expand_plan(question, body.prior_plan, body.variant_context, release)
+                    or route_followup(question, body.variant_context, release)
+                    or variant_answer(question, body.variant_context, focus, body.distance_followup, body.reference_id)
+                )
             if plan:
                 context = PlanContext.model_validate(plan["variant_context"])
                 focus.route = "Annapurna Base Camp"

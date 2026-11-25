@@ -93,7 +93,18 @@ def duration(record):
     )
 
 
-def daily(record, stage=None):
+def day_activities(day):
+    activities = []
+    if day["walk"]:
+        activities.append("Walk " + day["walk"])
+    if day["transfer"]:
+        activities.append("Drive " + day["transfer"])
+        if day["transfer"].endswith("before walking"):
+            activities.reverse()
+    return ". ".join(activities) + "."
+
+
+def daily(record, stage=None, *, details=None):
     lines = [
         f"**{record['label']}** · {record['publisher']}. Walking endpoints: "
         f"{record['walking_start']} to {record['walking_finish']}. {duration(record)}."
@@ -101,17 +112,100 @@ def daily(record, stage=None):
     for number, day in enumerate(record["days"], 1):
         if stage is not None and stage != number:
             continue
-        activities = []
-        if day["walk"]:
-            activities.append("Walk " + day["walk"])
-        if day["transfer"]:
-            activities.append("Drive " + day["transfer"])
-        if day["transfer"] and day["transfer"].endswith("before walking"):
-            activities.reverse()
-        lines.append(f"Day {number} · " + ". ".join(activities) + ".")
+        line = f"Day {number} · " + day_activities(day)
+        if details is not None:
+            note = details.get(number) or day.get("walking_time_note")
+            line = "- " + line + (" " + note if note else "")
+        lines.append(line)
     if stage is not None and stage > len(record["days"]):
         lines.append("This published itinerary has no such day.")
     return "\n".join(lines) + "\n\n" + record["qualification"]
+
+
+class PriorPlan(BaseModel):
+    """The selected reply was a plan. Budget fields come from its walking-budget summary."""
+
+    days: float | None = Field(None, ge=0, allow_inf_nan=False)
+    origin: Literal["requested", "default"] | None = None
+
+
+EXPAND_PLAN = re.compile(
+    r"\b(?:detailed|full|expanded|step.by.step|day.by.day) (?:daily |trek |hiking |walking )?"
+    r"(?:plan|itinerary|schedule|breakdown)\b|\bday.by.day\b|"
+    r"\b(?:break|spell|flesh|lay) (?:it|that|this|the plan) (?:down|out)\b|"
+    r"\b(?:more detail(?:ed)?|each day|every day|one day at a time|day.to.day|elaborate|expand on (?:it|that|the plan))\b", re.I
+)
+
+
+def recorded_clocks(number, facts):
+    clocks = []
+    ids = []
+    for suffix, label in (("M", "moving"), ("E", "including stops")):
+        fid = f"KT-D{number}-{suffix}"
+        if fid in facts:
+            clocks.append(f"{facts[fid]['value']['original_display']} {label}")
+            ids.append(fid)
+    return ", ".join(clocks), ids
+
+
+def expand_plan(question, parent, previous, release):
+    if parent is None or not EXPAND_PLAN.search(question):
+        return None
+    if (is_packing_request(question) or OTHER_ROUTE.search(question)
+            or re.search(r"forecast|weather|equipment|training|fitness|permit|distance|altitude|"
+                         r"acclimati|food|gear|budget for|cost|price", question, re.I)
+            or DAY_COUNT.search(question) or requested_stage(question.lower(), previous)):
+        return None
+    keys = matching_routes(question)
+    if len(keys) > 1:
+        return None
+    key = keys[0] if keys else previous.active_key() if previous else None
+    if key is None and parent.origin:
+        key = "siwai"  # The budget summary is exclusively for the archived Siwai walk.
+    if key is None:
+        if previous:
+            options = [RECORDS[k] for k in previous.keys] or list(RECORDS.values())
+            return plan_result("Which itinerary would you like me to expand? " +
+                               ", ".join(r["label"] for r in options) + ".", previous, options)
+        return None
+    context = (previous or PlanContext()).model_copy(update={"keys": [key], "suggested": None, "stage": None})
+    if parent.origin == "requested":
+        context.days, context.basis = parent.days, "walking"
+    record = RECORDS[key]
+    details = {}
+    ids = set()
+    parts = []
+    walking, _ = counts(record)
+    if parent.origin == "default" and parent.days is not None:
+        parts.append(f"The earlier {parent.days:g} walking days were an example. "
+                     f"This published itinerary has {walking} walking days.")
+    elif context.days is not None and context.basis == "walking":
+        gap = walking - context.days
+        fit = (f"you would need {gap:g} more" if gap > 0 else
+               f"you have {abs(gap):g} in reserve" if gap < 0 else "the day counts match")
+        parts.append(f"You have {context.days:g} walking days. This itinerary uses {walking}, so {fit}.")
+    if key == "siwai":
+        chunks = {c["fact_id"]: c for c in release.chunks}
+        facts = {f["fact_id"]: f for f in release.facts if f["scope"]["reference_id"] == "ABC-KT-06"}
+        ids.update({"K07", "K08"} & chunks.keys())
+        for number in range(1, len(record["days"]) + 1):
+            clocks, clock_ids = recorded_clocks(number, facts)
+            if clocks:
+                details[number] = clocks + "."
+                ids.update(clock_ids)
+        if details:
+            parts.append("The times below come from one KeiTreks trip. Use them to compare stages when planning your own pace.")
+    else:
+        arrival = next((i for i, day in enumerate(record["days"], 1) if walk_ends(day)[1] == "ABC"), None)
+        if arrival:
+            parts.append(f"Plan around day {arrival}, when this itinerary reaches Annapurna Base Camp. "
+                         f"The remaining {len(record['days']) - arrival} days cover the return.")
+        if not any(d.get("walking_time_note") for d in record["days"]):
+            parts.append("The reviewed schedule gives daily stops and transfers. Daily walking times are unverified.")
+    parts.append(daily(record, details=details))
+    result = plan_result("\n\n".join(parts), context, [record])
+    result["evidence"] = [c for c in release.chunks if c["fact_id"] in ids]
+    return result
 
 
 def budget_basis(text):
@@ -142,6 +236,9 @@ def requested_stage(text, previous):
     numbered = re.search(r"\bday[ -]+(\d{1,2}|" + "|".join(DAY_NUMBERS[1:]) + r")\b", text)
     if numbered:
         return int(day_number(numbered[1])) or None
+    numeric_ordinal = re.search(r"\b(\d{1,2})(?:st|nd|rd|th) day\b", text)
+    if numeric_ordinal:
+        return int(numeric_ordinal[1]) or None
     ordinal = re.search(r"\b(" + "|".join(ORDINALS) + r") day\b", text)
     if ordinal:
         return ORDINALS.index(ordinal[1]) + 1
@@ -218,6 +315,16 @@ def variant_answer(question, previous, focus, after_distance=False, selected=Non
     choice, detail = CHOICE.search(text), DETAIL.search(text)
     basis = budget_basis(text)
     contextual = previous is not None or after_distance
+    overview = re.search(r"\b(?:overview|outline|big picture|in a nutshell|at a glance|brief summary|quick summary|summari[sz]e)\b", text)
+    plain_plan = not contextual and keys != ["siwai"] and re.search(r"\bplan\b", text)
+    if (len(keys) == 1 and (overview or plain_plan) and not counts_in_text and not stage
+            and not choice and not EXPAND_PLAN.search(text) and not re.search(r"daily|stages", text)):
+        record = RECORDS[keys[0]]
+        arrival = next(i for i, day in enumerate(record["days"], 1) if walk_ends(day)[1] == "ABC")
+        answer = (f"{record['publisher']} lists {duration(record)}. "
+                  f"The walk starts at {record['walking_start']}, reaches Annapurna Base Camp on day {arrival}, "
+                  f"and finishes at {record['walking_finish']}.")
+        return plan_result(answer, PlanContext(keys=keys), [record])
     fragment = distance_followup(text) or (
         previous
         and re.fullmatch(
@@ -502,11 +609,48 @@ def comparison_followup(question, previous):
     return plan_result(answer, context, records)
 
 
+def focused_day(record, number, context, release):
+    day = record["days"][number - 1]
+    parts = [f"**Day {number} · {record['label']}**", day_activities(day)]
+    ids = []
+    if record["key"] == "siwai":
+        facts = {f["fact_id"]: f for f in release.facts
+                 if f["scope"]["reference_id"] == "ABC-KT-06" and f["scope"].get("stage_index") == number}
+        clocks, ids = recorded_clocks(number, facts)
+        if clocks:
+            parts.append(f"KeiTreks recorded {clocks} on this walk.")
+        for fid, fact in facts.items():
+            if fact["predicate"] in {"approximate_cumulative_ascent", "approximate_cumulative_descent"}:
+                parts.append(fact["statement_en"])
+                ids.append(fid)
+    elif note := day.get("walking_time_note"):
+        parts.append(note)
+    if not day["walk"]:
+        parts.append(f"This is a transfer day. The first walking stage is {next(d['walk'] for d in record['days'] if d['walk'])}.")
+    elif number > 1 and not record["days"][number - 2]["walk"]:
+        parts.append(f"Day {number - 1} is the approach to {record['walking_start']}; walking starts on day {number}.")
+    if day["transfer"] and day["walk"] and number == len(record["days"]):
+        parts.append("Allow time for the drive after the walk. The reviewed schedule gives no confirmed pickup or arrival time.")
+    result = plan_result("\n\n".join(parts), context.model_copy(update={"stage": number}), [record])
+    result["evidence"] = [c for c in release.chunks if c["fact_id"] in ids]
+    return result
+
+
 def route_followup(question, previous, release):
     """Resolve pointers against the selected publisher's ordered stages before broad retrieval."""
     text = question.casefold().replace("’", "'")
     pair = directed_stage(text)
     keys = matching_routes(STAGE_PAIR.sub("", text) if pair and previous else text)
+    # A named village in a numbered stage can also be another itinerary's trailhead.
+    active = previous.active_key() if previous else None
+    number = requested_stage(text, previous)
+    if active and keys and number and re.search(r"\b(?:leave|leaving|reach|reaching|pass|passing|overnight in|sleep in)\b", text):
+        days = RECORDS[active]["days"]
+        if number <= len(days) and not re.search(r"switch|instead|other (?:route|itinerary)|version|approach", text):
+            day = days[number - 1]
+            waypoints = matching_routes((day["walk"] or "") + " " + (day["transfer"] or ""))
+            if all(k in waypoints for k in keys):
+                keys = [active]
     if not keys and "keitreks" in text:
         keys = ["siwai"]
     compare = re.search(r"later|earlier|higher numbered|sooner", text)
@@ -603,6 +747,20 @@ def route_followup(question, previous, release):
         )
     old = context.stage
     stage = stage_selection(text, record, old)
+    numbered_day = requested_stage(text, context)
+    day_plan = re.search(
+        r"what(?:'s| is) (?:on|the plan|planned)|what (?:do|will|happens)|how does .*day work|"
+        r"walk .*through|talk .*through|tell me about|what does .*look like|what are we doing|show|outline|describe|(?:more )?detail|"
+        r"(?:the )?(?:first|last|final|second|third|fourth|fifth|sixth|seventh|eighth) (?:walking|hiking) day|"
+        r"^(?:and |what about |how about )?(?:on )?day ", text
+    )
+    if (day_plan and (stage or numbered_day) and not OTHER_ROUTE.search(text)
+            and not re.search(r"weather|forecast|train|pack|gear|notice|permit|meet|join|contact|"
+                              r"how long|how (?:many|much)|what time|distance|ascent|descent|"
+                              r"duration|minutes|hours|elevation|altitude|reverse", text)):
+        number = stage or numbered_day
+        if 1 <= number <= len(record["days"]):
+            return focused_day(record, number, context, release)
     if stage is None and re.search(r"day.s (?:walk|stage|leg)|(?:show|describe|outline).{0,45}(?:walk|stage|leg)|where .*walk", text):
         stage = requested_stage(text, context)
     contact = contact_question(text)

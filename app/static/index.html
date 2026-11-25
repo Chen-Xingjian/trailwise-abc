@@ -7,7 +7,7 @@
   <meta name="description" content="A local research pilot for exploring reviewed Annapurna trekking information with clear sources and evidence limits.">
   <title>Trailwise — Nepal trekking, grounded in evidence</title>
   <link rel="stylesheet" href="/static/styles.css?v=compare-2">
-  <script type="module" src="/static/app.js?v=shared-live-checks"></script>
+  <script type="module" src="/static/app.js?v=two-turn-demo"></script>
 </head>
 <body>
   <a class="skip-link" href="#workspace">Skip to the question workspace</a>
@@ -70,14 +70,13 @@
 
     <section class="workspace-section shell" id="workspace" aria-labelledby="workspace-heading">
       <div class="section-heading"><div><span class="eyebrow">THE QUESTION WORKSPACE</span><h2 id="workspace-heading">Ask with a little more context.</h2></div><span class="language-label">ENGLISH QUESTIONS & ANSWERS</span></div>
-          <div class="demo-questions"><p class="eyebrow">TRY A DEMO QUESTION</p>
-            <div class="demo-list">
-              <button type="button" class="example-button">How long did KeiTreks spend moving from Deurali to Annapurna Base Camp on day four?</button>
-              <button type="button" class="example-button">On the Ghandruk itinerary, what is the first walking stage?</button>
-              <button type="button" class="example-button">Which is wetter in August on the historical climate grid, Chhomrong or Annapurna Base Camp?</button>
-              <button type="button" class="example-button">What should I bring for the six-day ABC trek from Siwai?</button>
-            </div>
-          </div>
+      <section class="demo-questions" aria-labelledby="demo-heading">
+        <h3 class="eyebrow" id="demo-heading">Compare the answers, then ask about the return walk</h3>
+        <div class="demo-list">
+          <button type="button" id="demo-question" class="example-button">On the six-day trek from Siwai, how long did KeiTreks actually spend walking from Deurali to ABC?</button>
+          <button type="button" id="demo-followup" class="example-button" disabled>Can I use that same time for the return walk from ABC to Deurali?</button>
+        </div>
+      </section>
       <div id="service-notice" class="service-notice" role="status" hidden></div>
       <div class="workspace-grid">
         <section class="question-panel" aria-labelledby="question-panel-heading">

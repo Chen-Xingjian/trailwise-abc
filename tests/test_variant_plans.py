@@ -23,6 +23,8 @@ def ask(tmp_path):
                 json=dict(
                     question=q,
                     offer_live_checks=True,
+                    prior_plan=prior.get("planning_budget", {} if prior.get("answer_kind") == "variant_plan" else None),
+                    planning_followup=prior.get("answer_kind") in {"clarification", "itinerary_budget"},
                     variant_context=prior.get("variant_context"),
                     trail_focus=prior.get("trail_focus"),
                     distance_followup=prior.get("answer_kind") == "route_distance",
@@ -73,3 +75,55 @@ def test_screenshot_branch_and_specific_budget(ask):
     assert len(answer["itinerary_sources"]) == 2
     plan = ask("Show me the daily plan for Nayapul.")
     assert "Day 7 · Walk Jhinu Hot Spring → Nayapul" in plan["answer"]
+
+def test_expand_default_budget_into_observed_daily_stages(ask):
+    first = ask("can you give me a plan for ABC trek")
+    assert first["planning_budget"] == {"days": 5, "origin": "default"}
+    for q in ("can you give me a detailed plan", "Could you break it down day by day?"):
+        reply = ask(q, first)
+        assert reply["variant_context"]["keys"] == ["siwai"]
+        assert "5 walking days were an example" in reply["answer"]
+        assert reply["answer"].count("- Day ") == 6
+        assert "4h 30m moving, 7h 43m including stops" in reply["answer"]
+        cited = {c["fact_id"] for c in reply["evidence"]}
+        assert {f"KT-D{d}-{clock}" for d in range(1, 7) for clock in "ME"} <= cited
+
+
+def test_detail_retains_requested_budget_and_alternative_trailhead(ask):
+    first = ask("Plan my ABC trek from Siwai for seven walking days")
+    assert "1 in reserve" in ask("Can you flesh that out?", first)["answer"]
+    village = ask("Show me the daily itinerary from Ghandruk")
+    reply = ask("Could I have a more detailed plan?", village)
+    assert reply["variant_context"]["keys"] == ["ghandruk"]
+    assert "5–6 hours" in reply["answer"] and not reply["evidence"]
+    assert "KeiTreks" not in reply["answer"]
+    assert ask("Give me a detailed packing list", first)["answer_kind"] != "variant_plan"
+
+
+@pytest.mark.parametrize(("key", "questions", "number", "leg", "extra"), [
+    ('jhinu', ['Could I get a quick overview of the ABC trek from Jhinu Danda?', 'Can you give me a detailed plan?', 'What’s on the fourth day?'], 4, 'ABC → Sinuwa', '6–8'),
+    ('siwai', ['Can you give me a plan for ABC trek from Siwai?', 'Could you lay it out day by day?', 'Walk me through day four.'], 4, 'Deurali → ABC', '1,000'),
+    ('ghandruk', ["What's the ABC itinerary from Ghandruk in a nutshell?", 'Can you flesh that out?', "What's the plan for the first walking day?"], 2, 'Ghandruk → Chhomrong', '5–6'),
+    ('nayapul', ['Can you outline the ABC itinerary from Nayapul?', 'Show me the full itinerary, please.', 'How does the final day work, including getting back to Pokhara?'], 7, 'Jhinu Hot Spring → Nayapul', 'Nayapul → Pokhara'),
+    ('poon', ['Give me the big picture for the ABC trek via Poon Hill.', 'Could I see what happens each day?', 'What do we do on day one?'], 1, 'Pokhara → Ghorepani', 'transfer day'),
+])
+def test_itinerary_drilldown(ask, key, questions, number, leg, extra):
+    overview = ask(questions[0])
+    assert overview["answer_kind"] in {"variant_plan", "itinerary_budget"}
+    assert "Day 1 ·" not in overview["answer"]
+    details = ask(questions[1], overview)
+    assert details["answer"].count("- Day ") == len(RECORDS[key]["days"])
+    assert details["variant_context"]["keys"] == [key]
+    stage = ask(questions[2], details)
+    assert stage["variant_context"]["keys"] == [key]
+    assert stage["variant_context"]["stage"] == number
+    assert leg in stage["answer"] and extra in stage["answer"]
+    assert stage["answer"].count(" · ") == 1 and "Walking endpoints" not in stage["answer"]
+    for answer in (details, stage):
+        assert [s["url"] for s in answer["itinerary_sources"]] == [RECORDS[key]["url"]]
+        if key != "siwai":
+            assert not answer["evidence"]
+    if key == "nayapul":
+        other = ask("What happens on day two when we leave Ghandruk?", details)
+        assert other["variant_context"]["keys"] == ["nayapul"]
+        assert "Ghandruk → Sinuwa" in other["answer"]
