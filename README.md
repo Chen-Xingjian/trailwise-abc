@@ -4,7 +4,7 @@ Trailwise is an English-language web app for hikers planning an Annapurna Base C
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Chen-Xingjian/trailwise-abc/blob/main/notebooks/abc_rag_walkthrough.ipynb)
 
-**Try the notebook in your browser.** Click the badge and choose **Runtime → Run all**. The default CPU runtime downloads the public data and installs the walkthrough dependencies. The data check should show **84 accepted facts, 19 source records and 84 chunks**. You can inspect a real retrieval result and its prompt, then compare archived model answers. For fresh model responses, use the Mac app below.
+**Try the notebook in your browser.** Click the badge and choose **Runtime → Run all**. The default CPU runtime downloads the public data and installs the walkthrough dependencies. The data check should show **85 accepted facts, 20 source records and 85 chunks**. You can inspect a real retrieval result and its prompt, then inspect the frozen blind-test results and all three turns from the presentation. On a configured Mac, Run All also opens the same local chat as the shell launcher and requests a fresh pair of answers from its API.
 
 ![Trailwise displaying its side-by-side answer comparison](outputs/demo-comparison.jpg)
 
@@ -31,7 +31,15 @@ python scripts/download_models.py
 
 Open **[the local chat](http://127.0.0.1:8765/)** after startup. On later runs, use just the last command. The model service uses port 8081. Ctrl+C stops both services. Weights and indexes are stored in the Mac’s cache. Model downloads require internet access. Live forecasts, notices and source checks also need a connection. The public repository hosts the code and examples. The web app runs on your computer.
 
-To explore the documents and recorded answers without downloading the models, use the [notebook](notebooks/abc_rag_walkthrough.ipynb). In a Python 3.12 virtual environment, install the project with `python -m pip install -e . jupyterlab ipykernel`, open the notebook with `python -m jupyterlab notebooks/abc_rag_walkthrough.ipynb` and run all cells. It uses a lightweight search preview by default.
+**Notebook entry on the same Mac.** After the one-time setup above, activate the same environment, install Jupyter once, and open the walkthrough from the repository folder.
+
+```sh
+source ~/Library/Caches/Trailwise/nepal-trail-rag/fresh-venv/bin/activate
+python -m pip install jupyterlab ipykernel
+python -m jupyterlab notebooks/abc_rag_walkthrough.ipynb
+```
+
+Choose **Run All**. The last cell calls the same launcher, opens the same [local chat](http://127.0.0.1:8765/), and requests a fresh RAG and baseline answer. You can use either entry first. A running instance is reused after its application fingerprint, release, semantic index and generation settings are checked. Colab’s hosted CPU runs the document and retrieval walkthrough and replays the presentation evidence. Live generation uses the configured Mac.
 
 ## What the guide knows
 
@@ -41,7 +49,7 @@ To explore the documents and recorded answers without downloading the models, us
 | Equipment and preparation | Selected National Park Service, Wikivoyage and CDC guidance, with the original qualifications attached. Hikers can discuss gear and past experience. Individual medical clearance is outside the app’s scope. |
 | Season and current conditions | ERA5 summaries describe historical conditions near three points. DWD ICON through Open-Meteo supplies dated forecasts. Nepal Tourism Board and municipal notices can identify published updates. An empty notice search leaves trail access unresolved. |
 
-The **public edition contains 84 facts from 19 source records**. The frozen coursework edition used 85 facts from 20 source records. One project-only booking prompt was approved for local assessment and was omitted from this edition. Each included fact retains its accepted content hash and source references. The public subset has a separate manifest. [Data guide](documents/README.md) · [Attribution and reuse terms](documents/abc-six-day/ATTRIBUTION.txt)
+Both entry points use the **presentation release with 85 facts from 20 source records**. The release ID is `ABC-KT06-LOCAL-TEST-20261122-R1`. Its five release files match the frozen coursework package byte for byte. G09 is the project’s own reminder to confirm booking terms. The original review is preserved with the publication context in [NOTICE.md](NOTICE.md). [Data guide](documents/README.md) · [Attribution and reuse terms](documents/abc-six-day/ATTRIBUTION.txt)
 
 ## How the comparison works
 

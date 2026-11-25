@@ -38,6 +38,12 @@ class Release:
     scope: dict
     chunks: list[dict]
 
+    def index_fingerprint(self, embedding_identity: str) -> str:
+        return canonical_hash({
+            "release": self.manifest, "embedding": embedding_identity,
+            "chunk_schema": "atomic-reviewed-v1", "chunks": self.chunks,
+        })[:20]
+
 
 def load_release(directory: Path) -> Release:
     directory = directory.resolve()

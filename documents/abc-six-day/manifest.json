@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0.0",
-  "release_id": "ABC-KT06-PUBLIC-20261125-R1",
-  "created_on": "2026-11-25",
-  "stage": "PUBLIC_COURSEWORK_SUBSET",
+  "release_id": "ABC-KT06-LOCAL-TEST-20261122-R1",
+  "created_on": "2026-11-22",
+  "stage": "LOCAL_TEST_CANDIDATE",
   "local_prototype_use": true,
   "production_ready": false,
   "base_review_release": {
-    "id": "ABC-KT06-LOCAL-TEST-20261122-R1",
-    "sha256": "a861181bcb470910e15bd66975ba89fff4e3d6c088ca7428457b25b30f07a3f0"
+    "path": "outputs/abc_preparation_frozen_20261122/freeze_record.audit.json",
+    "sha256": "5ce0cc7e7fd4072ae64c7a8285ef53b32394fb949747231df57e3d9821dcee55"
   },
   "fact_file": "facts.jsonl",
   "source_file": "sources.jsonl",
   "scope_file": "scope.json",
   "attribution_file": "ATTRIBUTION.txt",
-  "fact_count": 84,
-  "source_count": 19,
+  "fact_count": 85,
+  "source_count": 20,
   "allowed_fact_ids": [
     "K07",
     "K08",
@@ -55,6 +55,7 @@
     "G02",
     "G03",
     "G04",
+    "G09",
     "G10",
     "G11",
     "G12",
@@ -114,6 +115,7 @@
     "WV-ABC-GEAR",
     "NPS-KIT",
     "WV-ABC-WATER",
+    "PROJECT-G09",
     "NPS-KIT-G10-G12",
     "WV-ABC-SNACKS",
     "WV-ABC-SEASONS",
@@ -162,6 +164,7 @@
     "G02": "724a6016e7b6c070b8e9748b7a3101ca7f5c27cda49325e0b17030ce10b8dd0b",
     "G03": "cbc36a7139df6b4a3c01f54225cf493e1fe42aa904f9bdbce173f03ca2fc1f54",
     "G04": "412cddce2a4425d6d477f4a22ef60ba8319b38534895539eb36ccb9ab26f74d3",
+    "G09": "4b30e37ef12290df77d2a5e7cf811babcb0ef5ea90df5fa1c476f217b54845e6",
     "G10": "b4dc6f877c8ad36b4d455c6a5c38dbe5076d0326dd9a3b39063cb49a90b4b31e",
     "G11": "e6b46942ce31c04ef2a4ab96e3264909bbc6d41ab855cbdf788f2497b43637ff",
     "G12": "aa7bdfb0135971fd24e6bd10866fd62c4041dafa6facb3cc7c03e8cdfea5d3ea",
@@ -221,6 +224,7 @@
     "WV-ABC-GEAR": "e71d0126d8fd34408c6dc277e67ecebda64cd172d82de2b48fa6e24aa256d40d",
     "NPS-KIT": "9f6fca23e004ec1198588be27ea0cd915c0ebc6001e10ec15a3af5ed54bca319",
     "WV-ABC-WATER": "e3cf410e20e59a31f0b9962de90a8000d7680dd40fc704738dbf89a49ec79f34",
+    "PROJECT-G09": "3f283394e30535f363979735958fec100d7657a301b52d1d17854ceaee4d964f",
     "NPS-KIT-G10-G12": "f828794e86d013c03e622db5982bf646a23ad674824b8a43e4f570d2a996bf95",
     "WV-ABC-SNACKS": "be48e3b9966e7a2ca7a421b697b3758890f6aacffd380988a4e65bdab2bac060",
     "WV-ABC-SEASONS": "9339e259f22e82c8b777ecf9a8b0bb5611e1546ad3ce6f97a3300e4a13322e23",
@@ -236,8 +240,7 @@
     "S07",
     "F01",
     "F02",
-    "F06",
-    "G09"
+    "F06"
   ],
   "suspended_fact_ids": [
     "K01",
@@ -249,20 +252,20 @@
   ],
   "files": {
     "ATTRIBUTION.txt": {
-      "sha256": "34defb6a3173e47237f2bcccb88aa99a77d74b5bea38eff55315f08fb38656d0",
-      "bytes": 12898
+      "sha256": "4b43563ba80f333a6cf202321a49f11543d27ca9d5b257eab3ca6b65a1f4e7ee",
+      "bytes": 13322
     },
     "facts.jsonl": {
-      "sha256": "c44b756babc47a525b0271f36f98b2d9940a39575d731161bed36a40f3b65b67",
-      "bytes": 238504
+      "sha256": "1c04a1b2476b29926c8bed0a7a3d3e33091a4d6193dd0e3f13258a9d142412c3",
+      "bytes": 240699
     },
     "scope.json": {
-      "sha256": "c8037d9a4e03185308bf8c6c80d21f3e5cd73eb53072aee1d1d2a13221d113f5",
-      "bytes": 2591
+      "sha256": "bc5859992f7713258ef446d3ea31ffaa9b41e9e3249cc8c2b8eda2fe410d0d80",
+      "bytes": 2606
     },
     "sources.jsonl": {
-      "sha256": "e8c6cd997da85b49f75fee0fa1673764ed19f850ed3a0f09e396242eb72323e6",
-      "bytes": 31760
+      "sha256": "1dca1857125497f66b71062c2228e75c75e4651abd45a2d0afeb078f65f9d2c3",
+      "bytes": 33062
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "release_id": "ABC-KT06-PUBLIC-20261125-R1",
+  "release_id": "ABC-KT06-LOCAL-TEST-20261122-R1",
   "language": "en",
   "allowed_reference_ids": [
     "ABC-KT-06",
@@ -45,6 +45,7 @@
     "G02",
     "G03",
     "G04",
+    "G09",
     "G10",
     "G11",
     "G12",

@@ -2,7 +2,7 @@
 
 This local coursework prototype does not apply a single licence to every file.
 
-The public subset contains 19 source records. The original local assessment included one additional project-only booking prompt, omitted here. See the [pilot attribution file](documents/abc-six-day/ATTRIBUTION.txt) and [source-by-source permissions](documents/abc-six-day/sources.jsonl) for the conditions attached to each record. The original six-fact preview has its own attribution file.
+The repository distributes the 85-fact presentation edition with its original review files. G09 is a project-authored booking reminder included by the project owner for this public coursework demonstration. Its historical PROJECT-LOCAL-USE label describes the earlier assessment review. The cited operator is a cross-check only. This publication grants no new rights in any third-party work. See the [pilot attribution file](documents/abc-six-day/ATTRIBUTION.txt) and [source-by-source permissions](documents/abc-six-day/sources.jsonl) for the conditions attached to each record. The original six-fact preview has its own attribution file.
 
 - Reviewed O01 facts adapt only the permitted KeiTreks fields, under CC BY 4.0.
 - Reviewed O03 text adapts Wikivoyage material, under CC BY-SA 4.0, with its imported-work notice and contribution history retained. See `data/release/ATTRIBUTION.txt` and each source record. Shared adaptations must retain the applicable attribution and share-alike conditions.

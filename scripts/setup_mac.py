@@ -29,7 +29,7 @@ def main():
         ], cwd=ROOT, check=True)
     print(f"Local generated files: {cache}")
     print(f"Next: {venv / 'bin/python'} scripts/download_models.py")
-    print(f"Then: {venv / 'bin/python'} scripts/launch_local.py --runtime-dir {cache / 'model-runtime'}")
+    print(f"Then: {venv / 'bin/python'} -m scripts.launch_local --runtime-dir {cache / 'model-runtime'}")
 
 
 if __name__ == "__main__":

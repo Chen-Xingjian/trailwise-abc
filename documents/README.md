@@ -1,6 +1,6 @@
 # Documents used by the ABC assistant
 
-The input to retrieval is the [reviewed ABC six-day release](abc-six-day/manifest.json). The 84 public records cover route planning, equipment, season and weather context, and preparation. There are 19 source records. Some statements concern a single party or a general preparation principle. Each record carries its own scope.
+The input to retrieval is the [reviewed ABC six-day release](abc-six-day/manifest.json). The 85 presentation records cover route planning, equipment, season and weather context, and preparation. There are 20 source records. Some statements concern a single party or a general preparation principle. Each record carries its own scope.
 
 | File | What to check |
 | --- | --- |

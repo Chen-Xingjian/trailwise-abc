@@ -8,7 +8,7 @@ import time
 import httpx
 
 from app.citations import citation_ids
-from app.config import Settings
+from app.config import Settings, application_revision
 from app.llm import LocalLLM
 from app.packing import packing_answer
 from app.planning import (
@@ -36,6 +36,7 @@ BASE_PROMPT = (
 
 class Assistant:
     def __init__(self, settings: Settings):
+        self.application_revision = application_revision()
         self.settings = settings
         self.release = load_release(settings.release_dir)
         self.retriever = Retriever(self.release, settings)
@@ -50,6 +51,7 @@ class Assistant:
     def status(self):
         return {
             "release_id": self.release.manifest["release_id"],
+            "application_revision": self.application_revision,
             "accepted_fact_count": len(self.release.facts),
             "indexed_fact_count": self.retriever.count,
             "model": self.llm.status(),

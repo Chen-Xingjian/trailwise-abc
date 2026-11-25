@@ -1,5 +1,6 @@
 """Explicit local configuration; no hosted service is enabled by default."""
 
+import hashlib
 import os
 import sys
 from dataclasses import dataclass
@@ -11,6 +12,16 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RUNTIME = (Path.home() / "Library/Caches/Trailwise/nepal-trail-rag/model-runtime"
                    if sys.platform == "darwin" else ROOT / "runtime")
+
+
+def application_revision():
+    digest = hashlib.sha256()
+    for directory in (ROOT / "app", ROOT / "config"):
+        for path in sorted(directory.rglob("*")):
+            if path.suffix in {".py", ".json", ".js", ".mjs", ".html", ".css"}:
+                digest.update(path.relative_to(ROOT).as_posix().encode() + b"\0")
+                digest.update(hashlib.sha256(path.read_bytes()).digest())
+    return digest.hexdigest()
 
 
 @dataclass(frozen=True)

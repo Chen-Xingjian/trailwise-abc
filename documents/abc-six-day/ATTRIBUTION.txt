@@ -1,4 +1,4 @@
-Trailwise public coursework subset. Credits and source-specific terms for the selected records follow.
+Local assessment use only. Source-specific credit and restrictions apply to the selected records.
 
 O01
 title: GPX downloads
@@ -129,6 +129,14 @@ reuse_scope: G04 only, refillable container and treatment planning for untreated
 changes_notice: Selected advice paraphrased. Quantity, rules, prices and water-point availability omitted.
 additional_notice: Footer notes imported CC BY-SA 3.0 work and directs users to contributor history; retain this notice and the history link
 history_url: https://en.wikivoyage.org/w/index.php?title=Annapurna_Sanctuary_trek&action=history
+
+PROJECT-G09
+title: ABC pilot booking verification prompt
+publisher: ABC six-day pilot project
+source_locator: Parent review workbook ABC_装备验收_G01-G08.xlsx, 装备逐项验收!C13, accepted by user on 2026-11-22.
+attribution: Project-authored prompt approved by the user.
+licence_id: PROJECT-LOCAL-USE
+reuse_scope: Original booking verification prompt for this local assessment. No operator text or entitlement ingested.
 
 NPS-KIT-G10-G12
 title: Ten Essentials

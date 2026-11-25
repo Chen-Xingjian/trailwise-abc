@@ -37,6 +37,26 @@ jobs:
         run: python scripts/validate_release.py
       - name: Validate the ABC notebook and app corpus
         run: python scripts/validate_release.py --release documents/abc-six-day
+      - name: Run the CPU notebook walkthrough
+        run: |
+          python - <<'PYTHON'
+          import contextlib
+          import io
+          import json
+          from pathlib import Path
+
+          notebook = json.loads(Path("notebooks/abc_rag_walkthrough.ipynb").read_text())
+          session = {}
+          output = io.StringIO()
+          with contextlib.redirect_stdout(output):
+              for cell in notebook["cells"]:
+                  if cell["cell_type"] == "code":
+                      exec(compile("".join(cell["source"]), cell["id"], "exec"), session)
+          for result in ("85 accepted facts, 20 source records, 85 chunks", "Preview retrieval:",
+                         "with RAG 15/32, without RAG 13/32", "with RAG 2/8, without RAG 3/8",
+                         "Recorded turn 3", "CPU walkthrough complete"):
+              assert result in output.getvalue(), result
+          PYTHON
       - name: Lint application and checks
         run: ruff check app scripts tests
       - name: Run offline business tests

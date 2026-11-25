@@ -8,7 +8,7 @@
 
 Mac 设置入口为 `python3.12 scripts/setup_mac.py --install`。它在 `~/Library/Caches/Trailwise/nepal-trail-rag/` 创建 `fresh-venv` 和 `model-runtime`，按 `requirements/constraints-mac.txt` 安装 `dev,embeddings,mlx,download` 依赖；不移动项目原环境，也不建立目录符号链接。激活该环境后执行 `python scripts/download_models.py`，下载位置默认是上述 `model-runtime`；固定 revision 在 `config/model_pins.json`，实际 snapshot 位置记录在缓存内的 `model_snapshots.json`。
 
-使用 `python scripts/launch_local.py`，或在完成初始化后双击 `run-local.command`，启动器会选择 Caches 的环境、模型快照与派生索引，设定 CPU embedding 及单进程应用。终端 Ctrl+C 会停止模型和应用两个进程。`run-local.command` 不自动安装依赖或下载模型。
+使用 `python -m scripts.launch_local`，或在完成初始化后双击 `run-local.command`，启动器会选择 Caches 的环境、模型快照与派生索引，设定 CPU embedding 及单进程应用。终端 Ctrl+C 会停止模型和应用两个进程。`run-local.command` 不自动安装依赖或下载模型。
 
 本机发现 `Documents` 被 iCloud FileProvider 管理，旧环境和权重会变成按需下载文件，导致导入和加载等待。因此，把大量可重建生成物放在本机 Caches，代码、受控数据及审核历史仍保留在项目中。原 `.venv/` 与 `runtime/` 保留为 gitignored 的旧生成目录，不是当前启动器的活动环境或模型依据；不自动删除它们。
 
@@ -48,7 +48,7 @@ Qdrant Local适合首轮单进程应用。多个服务进程不得同时把同�
 
 ## ABC weather and trail updates
 
-On this Mac, run `./run-abc-live.command` and open `http://127.0.0.1:8765`. This entry uses the 84-record public subset in [documents/abc-six-day](../documents/abc-six-day). To select another reviewed package explicitly, set `DATA_RELEASE_DIR` before starting the launcher. The original launcher uses its configured release. The server binds to loopback. The model and vector index run locally. Weather and notice requests send public lookup parameters to their respective publishers. User questions and personal information stay on the Mac.
+On this Mac, run `./run-abc-live.command` and open `http://127.0.0.1:8765`. This entry uses the 85-record presentation release in [documents/abc-six-day](../documents/abc-six-day). To select another reviewed package explicitly, set `DATA_RELEASE_DIR` before starting the launcher. The server binds to loopback. The model and vector index run locally. Weather and notice requests send public lookup parameters to their respective publishers. User questions and personal information stay on the Mac.
 
 In the English question box, try “Forecast for Deurali tomorrow from 07:00 to 10:00” or “Is the ABC trail currently open?” Reply in the same chat to supply a missing date, reference point or walking window. A point forecast describes one model grid neighbourhood. A question about a whole stage with no representative point prompts for the missing location in the conversation. Forecast subqueries sent through the UI use the educational, on-demand service. Existing offline comparison scripts omit `offer_live_checks`; baseline mode skips live tools. Frozen R38 scores refer to the earlier offline evaluation.
 
@@ -64,7 +64,7 @@ Weather attribution: DWD ICON Global via [Open-Meteo](https://open-meteo.com/), 
 
 The ABC launcher starts a supervised source checker while the local application is running. It checks for due work hourly, including on startup. Static source targets are revisited every seven days, archived ERA5 inputs every 30 days, and failed requests after one day. Closing the app or sleeping the Mac delays checks until it runs again. The chat looks up current forecasts and notices on demand. Set `ABC_SOURCE_WATCH=0` for an offline run.
 
-Open **Our coverage → Reviewed source changes** for per-target timestamps, unavailable sources and affected fact IDs. The public package maps all 84 facts to public targets. Binary GPX/CSV hashes, six ABC timing labels, the current Wikivoyage revision and ERA5 data (excluding processing time) have archived comparison values. OSM objects and NPS/CDC page text begin with a first-lookup comparison baseline. They can detect later source changes. That first lookup does not certify agreement with the old audit. HTML navigation/layout changes and upstream editorial revisions may produce alerts even if a fact is still correct.
+Open **Our coverage → Reviewed source changes** for per-target timestamps, unavailable sources and affected fact IDs. Of the 85 records, 84 map to public check targets. G09 is project-authored. Binary GPX/CSV hashes, six ABC timing labels, the current Wikivoyage revision and ERA5 data (excluding processing time) have archived comparison values. OSM objects and NPS/CDC page text begin with a first-lookup comparison baseline. They can detect later source changes. That first lookup does not certify agreement with the old audit. HTML navigation/layout changes and upstream editorial revisions may produce alerts even if a fact is still correct.
 
 In the repository, `python -m app.source_watch --release "$DATA_RELEASE_DIR" --runtime runtime --force` performs a manual check using the project Python environment. Each scan is stored under `runtime/source-watch/<release manifest SHA-256>/`. The JSON links targets to affected records and retains unavailable and changed states separately. Scans never change the release or reindex facts. After checking the original diff and every affected record, the reviewer can record that the facts are unaffected using the same command with `--affirm-unaffected TARGET OBSERVED_FINGERPRINT "reviewer's reason"` instead of `--force`. For a substantive change, prepare a revised fact with its new provenance, run the normal data audit and release a new version. Recheck the target definitions and archived comparison hashes when preparing a new release.
 

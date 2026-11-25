@@ -76,11 +76,7 @@ class Retriever:
             HashEmbedder() if settings.embedding_mode == "hash"
             else SentenceEmbedder(settings.embedding_model, settings.embedding_device)
         )
-        fingerprint = canonical_hash({
-            "release": release.manifest, "embedding": self.embedder.identity,
-            "chunk_schema": "atomic-reviewed-v1",
-            "chunks": release.chunks,
-        })[:20]
+        fingerprint = release.index_fingerprint(self.embedder.identity)
         self.fingerprint = fingerprint
         db_path = Path(settings.runtime_dir) / "qdrant" / fingerprint
         db_path.mkdir(parents=True, exist_ok=True)
